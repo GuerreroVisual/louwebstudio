@@ -1,0 +1,5 @@
+~/louwebstudio/
+├── index.html          ← El que acabás de copiar
+├── barber.html         ← El de la barbería (del chat de arriba)
+├── dental.html         ← El del dentista (del chat de arriba)
+└── restaurant.html     ← El del restaurante (del chat de arriba)
