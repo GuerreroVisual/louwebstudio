@@ -42,3 +42,11 @@
     </script>
 </body>
 </html>
+        const hamburger=document.getElementById('hamburger');const mobileMenu=document.getElementById('mobileMenu');hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');mobileMenu.classList.toggle('open');document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':''});document.querySelectorAll('.mobile-link').forEach(link=>{link.addEventListener('click',()=>{hamburger.classList.remove('active');mobileMenu.classList.remove('open');document.body.style.overflow=''})});
+        const revealObserver=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('visible')})},{threshold:0.08,rootMargin:'0px 0px -60px 0px'});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+        document.querySelectorAll('.faq-question').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.parentElement;document.querySelectorAll('.faq-item').forEach(i=>{if(i!==item)i.classList.remove('open')});item.classList.toggle('open')})});
+        document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const target=document.querySelector(a.getAttribute('href'));if(target)target.scrollIntoView({behavior:'smooth',block:'start'})})});
+        const scrollContainer=document.getElementById('portfolioScroll');let isDown=false,startX,scrollLeft;if(scrollContainer){scrollContainer.addEventListener('mousedown',(e)=>{isDown=true;startX=e.pageX-scrollContainer.offsetLeft;scrollLeft=scrollContainer.scrollLeft});scrollContainer.addEventListener('mouseleave',()=>isDown=false);scrollContainer.addEventListener('mouseup',()=>isDown=false);scrollContainer.addEventListener('mousemove',(e)=>{if(!isDown)return;e.preventDefault();scrollContainer.scrollLeft=scrollLeft-(e.pageX-scrollContainer.offsetLeft-startX)*2})}
+    </script>
+</body>
+</html>
