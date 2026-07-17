@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinnacle Tattoo — Custom Tattoo Studio | Corpus Christi, TX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --black: #0a0a0a;
+            --dark: #111111;
+            --darker: #1a1a1a;
+            --gray: #666;
+            --gray-light: #999;
+            --white: #f0ece4;
+            --cream: #e8e0d0;
+            --red: #c0392b;
+            --red-dark: #96281b;
+            --gold: #d4a843;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--white);
+            background: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 3px;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(15px);
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: 5px;
+            color: var(--white);
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .nav-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--red);
+        }
+
+        .nav-phone {
+            color: var(--red) !important;
+            font-weight: 700 !important;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.85) 100%),
+                        url('https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1920') center/cover;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 150px;
+            background: linear-gradient(transparent, var(--black));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 .red { color: var(--red); }
+
+        .hero .tagline {
+            font-size: 1rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--gray-light);
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .hero .location {
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--red);
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 45px;
+            border: 2px solid var(--red);
+            color: var(--red);
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        .btn-filled {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        .btn-filled:hover {
+            background: var(--red-dark);
+            border-color: var(--red-dark);
+        }
+
+        .btn-outline {
+            border-color: var(--gray);
+            color: var(--gray-light);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* MARQUEE */
+        .marquee {
+            background: var(--red);
+            padding: 12px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee-inner {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+        }
+
+        .marquee span {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 5px;
+            color: var(--white);
+            margin-right: 60px;
+        }
+
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 120px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 2px;
+        }
+
+        .about-img .line-top {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 60%;
+            height: 60%;
+            border-top: 2px solid var(--red);
+            border-right: 2px solid var(--red);
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text h2 .red { color: var(--red); }
+
+        .about-text p {
+            color: var(--gray-light);
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--cream);
+        }
+
+        .feature .icon {
+            color: var(--red);
+            font-size: 1.1rem;
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 100px 40px;
+            background: var(--dark);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--darker);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--red);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(192,57,43,0.3);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            letter-spacing: 3px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* GALLERY */
+        .gallery {
+            padding: 100px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 280px);
+            gap: 5px;
+            padding: 0 5px;
+        }
+
+        .gallery-grid .item {
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-grid .item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-grid .item:nth-child(5) {
+            grid-column: span 2;
+        }
+
+        .gallery-grid .item:nth-child(8) {
+            grid-column: span 2;
+        }
+
+        .gallery-grid .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease, filter 0.3s;
+            filter: grayscale(20%);
+        }
+
+        .gallery-grid .item:hover img {
+            transform: scale(1.08);
+            filter: grayscale(0%);
+        }
+
+        /* ARTISTS */
+        .artists {
+            padding: 100px 40px;
+            background: var(--dark);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .artists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .artist-card {
+            text-align: center;
+        }
+
+        .artist-card .photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 3px solid var(--red);
+        }
+
+        .artist-card .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .artist-card h3 {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+
+        .artist-card .specialty {
+            color: var(--red);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .artist-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* BOOKING */
+        .booking {
+            padding: 120px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--black) 0%, var(--dark) 100%);
+            border-top: 1px solid rgba(192,57,43,0.2);
+        }
+
+        .booking h2 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
+        .booking h2 .red { color: var(--red); }
+
+        .booking p {
+            color: var(--gray);
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* INFO BAR */
+        .info-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            background: var(--darker);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .info-item {
+            padding: 40px 30px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .info-item:last-child {
+            border-right: none;
+        }
+
+        .info-item h3 {
+            font-size: 1.3rem;
+            letter-spacing: 3px;
+            margin-bottom: 8px;
+            color: var(--red);
+        }
+
+        .info-item p {
+            color: var(--gray);
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--black);
+            padding: 50px 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        footer .logo-foot {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: var(--gray);
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: var(--red);
+            text-decoration: none;
+        }
+
+        /* ANIMATIONS */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .nav-links { display: none; }
+            .about { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px; }
+            .about-features { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+            .gallery-grid .item:nth-child(1) { grid-column: span 2; }
+            .gallery-grid .item:nth-child(5) { grid-column: span 1; }
+            .gallery-grid .item:nth-child(8) { grid-column: span 1; }
+            .artists-grid { grid-template-columns: 1fr; }
+            .info-bar { grid-template-columns: 1fr; }
+            .info-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            .section-header h2 { font-size: 2.2rem; }
+            .booking h2 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="logo">PINNACLE <span>TATTOO</span></div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#artists">Artists</a>
+            <a href="#book">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="tagline">Custom Tattoo Studio</div>
+            <h1>PINNACLE<br><span class="red">TATTOO</span></h1>
+            <div class="location">Corpus Christi, Texas</div>
+            <div class="btn-group">
+                <a href="#book" class="btn btn-filled">Book Appointment</a>
+                <a href="#gallery" class="btn">View Our Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+        <div class="marquee-inner">
+            <span>CUSTOM TATTOOS</span>
+            <span>COLOR REALISM</span>
+            <span>BLACK & GRAY</span>
+            <span>COVER UPS</span>
+            <span>PORTRAITS</span>
+            <span>NEO TRADITIONAL</span>
+            <span>JAPANESE</span>
+            <span>WALK-INS WELCOME</span>
+            <span>PIERCINGS</span>
+            <span>CUSTOM TATTOOS</span>
+            <span>COLOR REALISM</span>
+            <span>BLACK & GRAY</span>
+            <span>COVER UPS</span>
+            <span>PORTRAITS</span>
+            <span>NEO TRADITIONAL</span>
+            <span>JAPANESE</span>
+            <span>WALK-INS WELCOME</span>
+            <span>PIERCINGS</span>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="about-img fade-up">
+            <div class="line-top"></div>
+            <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=600" alt="Tattoo Studio">
+        </div>
+        <div class="about-text fade-up">
+            <h2>WHERE <span class="red">ART</span> MEETS SKIN</h2>
+            <p>Pinnacle Tattoo is Corpus Christi's premier custom tattoo studio. Every piece we create is designed specifically for you — no flash, no shortcuts, no compromises.</p>
+            <p>Our artists specialize in a wide range of styles, from color realism to black and gray, neo-traditional to Japanese, and everything in between. Walk-ins are always welcome.</p>
+            <p>We also offer professional piercings with the highest quality jewelry and sterile techniques.</p>
+            <div class="about-features">
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Custom Designs Only
+                </div>
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Sterile Environment
+                </div>
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Walk-Ins Welcome
+                </div>
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Cover-Up Specialists
+                </div>
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Professional Piercings
+                </div>
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Free Consultations
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>WHAT WE DO</h2>
+            <p>Custom tattoo artistry and professional piercings</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-up">
+                <div class="service-icon">&#127912;</div>
+                <h3>CUSTOM TATTOOS</h3>
+                <p>Every design is created specifically for you. We work with your ideas and transform them into wearable art that's uniquely yours.</p>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-icon">&#127752;</div>
+                <h3>COLOR REALISM</h3>
+                <p>Photorealistic tattoos in vivid color. Portraits, animals, nature — brought to life on your skin with stunning detail.</p>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-icon">&#9824;</div>
+                <h3>BLACK & GRAY</h3>
+                <p>Classic black and gray work with incredible depth and shading. From portraits to geometric designs, executed with precision.</p>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-icon">&#10006;</div>
+                <h3>COVER UPS</h3>
+                <p>Old tattoo you regret? We specialize in creative cover-ups that transform unwanted ink into something you'll love showing off.</p>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-icon">&#10024;</div>
+                <h3>NEO TRADITIONAL</h3>
+                <p>Bold lines, vibrant colors, and modern takes on classic tattoo styles. A perfect blend of old school and contemporary art.</p>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-icon">&#128167;</div>
+                <h3>PIERCINGS</h3>
+                <p>Professional body piercings with high-quality jewelry. Safe, sterile, and done by experienced piercers in a clean environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+        <div class="section-header">
+            <h2>OUR WORK</h2>
+            <p>Every piece is custom — designed and tattooed by our artists</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="item fade-up">
+                <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=800" alt="Tattoo work">
+            </div>
+            <div class="item fade-up">
+                <img src="https://images.unsplash.com/photo-1590246814883-57c511e76bfe?w=600" alt="Tattoo work">
+            </div>
+            <div class="item fade-up">
+                <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?w=600" alt="Tattoo work">
+            </div>
+            <div class="item fade-up">
+                <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=600" alt="Tattoo work">
+            </div>
+            <div class="item fade-up">
+                <img src="https://images.unsplash.com/photo-1475090169767-40ed8d18f67d?w=800" alt="Tattoo work">
+            </div>
+            <div class="item fade-up">
+                <img src="https://images.unsplash.com/photo-1542359186734-72a36fce9f80?w=600" alt="Tattoo work">
+            </div>
+            <div class="item fade-up">
+                <img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=600" alt="Tattoo work">
+            </div>
+            <div class="item fade-up">
+                <img src="https://images.unsplash.com/photo-1612459284270-27b3a394b432?w=800" alt="Tattoo work">
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTISTS -->
+    <section class="artists" id="artists">
+        <div class="section-header">
+            <h2>OUR ARTISTS</h2>
+            <p>Experienced, passionate, and dedicated to their craft</p>
+        </div>
+        <div class="artists-grid">
+            <div class="artist-card fade-up">
+                <div class="photo">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Artist">
+                </div>
+                <h3>ARTIST NAME</h3>
+                <div class="specialty">Color Realism / Portraits</div>
+                <p>Specializing in photorealistic tattoos and portraits. 10+ years of experience creating stunning, lifelike pieces.</p>
+            </div>
+            <div class="artist-card fade-up">
+                <div class="photo">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400" alt="Artist">
+                </div>
+                <h3>ARTIST NAME</h3>
+                <div class="specialty">Black & Gray / Neo Traditional</div>
+                <p>Master of black and gray work with incredible depth. Also creates bold neo-traditional pieces with vivid colors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO BAR -->
+    <div class="info-bar">
+        <div class="info-item">
+            <h3>WALK-INS</h3>
+            <p>Always welcome. Come in and talk to our artists about your next piece.</p>
+        </div>
+        <div class="info-item">
+            <h3>CONSULTATIONS</h3>
+            <p>Free consultations for custom work. Let's design your perfect tattoo together.</p>
+        </div>
+        <div class="info-item">
+            <h3>AFTERCARE</h3>
+            <p>We provide detailed aftercare instructions and premium aftercare products.</p>
+        </div>
+    </div>
+
+    <!-- BOOKING -->
+    <section class="booking" id="book">
+        <h2>READY TO GET <span class="red">INKED</span>?</h2>
+        <p>Walk in or book your appointment today. Free consultations for custom work.</p>
+        <div class="btn-group">
+            <a href="mailto:pinnacletattoo@yahoo.com" class="btn btn-filled">Book Appointment</a>
+            <a href="#gallery" class="btn btn-outline">View Gallery</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo-foot">PINNACLE TATTOO</div>
+        <p>Corpus Christi, Texas</p>
+        <p><a href="mailto:pinnacletattoo@yahoo.com">pinnacletattoo@yahoo.com</a></p>
+        <p style="margin-top:20px;font-size:0.7rem;color:var(--gray);">Custom Tattoos | Cover-Ups | Piercings | Walk-Ins Welcome</p>
+    </footer>
+
+    <!-- ANIMATION -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
