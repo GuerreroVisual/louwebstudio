@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coastal Bend Family Chiropractic — Dr. Dalton | Corpus Christi, TX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --teal: #0d7377;
+            --teal-dark: #065a5e;
+            --teal-light: #14a3a8;
+            --white: #ffffff;
+            --off-white: #f7fafa;
+            --gray: #6b7b8d;
+            --gray-light: #dce8ec;
+            --dark: #1a2b32;
+            --gold: #d4a843;
+            --green: #27ae60;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark);
+            line-height: 1.7;
+            background: var(--white);
+        }
+
+        h1, h2, h3 {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+        }
+
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            color: var(--teal);
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        .nav-cta {
+            background: var(--teal) !important;
+            color: var(--white) !important;
+            padding: 10px 25px !important;
+            border-radius: 50px !important;
+            margin-left: 30px !important;
+            font-weight: 600 !important;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(13,115,119,0.92) 0%, rgba(6,90,94,0.95) 100%),
+                        url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1600') center/cover;
+            padding: 120px 40px 80px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            color: var(--white);
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--white);
+            margin-bottom: 15px;
+            line-height: 1.15;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.85);
+            font-weight: 300;
+            margin-bottom: 35px;
+            max-width: 550px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--teal-dark);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--white);
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            margin-left: 15px;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--teal-dark);
+        }
+
+        .btn-teal {
+            background: var(--teal);
+            color: var(--white);
+            border-color: var(--teal);
+        }
+
+        .btn-teal:hover {
+            background: var(--teal-dark);
+            border-color: var(--teal-dark);
+            color: var(--white);
+        }
+
+        /* TRUST */
+        .trust {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding: 50px 20px;
+            background: var(--white);
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-item .icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: var(--teal);
+        }
+
+        .trust-item .label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* SERVICES */
+        .services {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--off-white);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(13,115,119,0.1);
+            border-color: var(--teal-light);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--teal-dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials {
+            padding: 100px 40px;
+            background: var(--teal);
+        }
+
+        .testimonials .section-header h2 {
+            color: var(--white);
+        }
+
+        .testimonials .section-header p {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .test-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 35px 30px;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .test-card .stars {
+            color: var(--gold);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .test-card p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .test-card .author {
+            color: var(--white);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .test-card .author span {
+            color: rgba(255,255,255,0.6);
+            font-weight: 400;
+        }
+
+        /* WHY US */
+        .why-us {
+            padding: 100px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .why-content h2 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .why-content p {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .why-list {
+            list-style: none;
+        }
+
+        .why-list li {
+            padding: 10px 0;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .why-list li::before {
+            content: '✓';
+            color: var(--green);
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .why-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        /* CONDITIONS */
+        .conditions {
+            padding: 80px 40px;
+            background: var(--off-white);
+        }
+
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 40px auto 0;
+        }
+
+        .condition-item {
+            text-align: center;
+            padding: 25px 15px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+        }
+
+        .condition-item .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .condition-item h4 {
+            font-size: 1rem;
+            color: var(--teal-dark);
+            margin-bottom: 5px;
+        }
+
+        .condition-item p {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 100px 40px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--teal-dark) 0%, var(--teal) 100%);
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-phone {
+            display: block;
+            margin-top: 25px;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .cta-phone:hover {
+            color: var(--gold);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            padding: 40px;
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: var(--teal-light);
+            text-decoration: none;
+        }
+
+        /* ANIMATIONS */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.3rem; }
+            .nav-links { display: none; }
+            .btn-outline { margin-left: 0; margin-top: 10px; }
+            .why-us { grid-template-columns: 1fr; gap: 30px; }
+            .trust { gap: 30px; }
+            .test-grid { grid-template-columns: 1fr; }
+            .conditions-grid { grid-template-columns: 1fr 1fr; }
+            .section-header h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="logo">Coastal Bend <span>Chiropractic</span></div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#about">About</a>
+            <a href="#conditions">Conditions</a>
+            <a href="#contact" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">★★★★★ Rated by Patients Across Corpus Christi</div>
+            <h1>Live Pain-Free.<br>Start Today.</h1>
+            <p>Dr. Dalton and the Coastal Bend Family Chiropractic team help Corpus Christi residents find relief from back pain, neck pain, vertigo, and more — naturally and effectively.</p>
+            <a href="#contact" class="btn">Book Your Appointment</a>
+            <a href="#services" class="btn btn-outline">Our Services</a>
+        </div>
+    </section>
+
+    <!-- TRUST -->
+    <div class="trust">
+        <div class="trust-item">
+            <div class="icon">&#9733;</div>
+            <div class="label">5-Star Patient Reviews</div>
+        </div>
+        <div class="trust-item">
+            <div class="icon">&#127973;</div>
+            <div class="label">Family Chiropractic</div>
+        </div>
+        <div class="trust-item">
+            <div class="icon">&#128137;</div>
+            <div class="label">Acupuncture Available</div>
+        </div>
+        <div class="trust-item">
+            <div class="icon">&#128207;</div>
+            <div class="label">Corpus Christi, TX</div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive care for your whole family</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card fade-up">
+                <div class="service-icon">&#129464;</div>
+                <h3>Chiropractic Care</h3>
+                <p>Traditional chiropractic adjustments to relieve back pain, neck pain, and improve your overall spinal health and mobility.</p>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-icon">&#127807;</div>
+                <h3>Acupuncture</h3>
+                <p>Ancient healing technique to reduce pain, decrease stress, and promote natural healing throughout your body.</p>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-icon">&#128257;</div>
+                <h3>Vertigo Treatment</h3>
+                <p>Specialized treatment for vertigo and dizziness. Dr. Dalton has helped patients regain their balance and quality of life.</p>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-icon">&#128170;</div>
+                <h3>Rehabilitation</h3>
+                <p>Custom rehabilitation programs to help you recover from injuries and get back to doing what you love.</p>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-icon">&#129504;</div>
+                <h3>Functional Medicine</h3>
+                <p>Holistic approach to healthcare that addresses the root cause of your symptoms, not just the symptoms themselves.</p>
+            </div>
+            <div class="service-card fade-up">
+                <div class="service-icon">&#129491;</div>
+                <h3>Custom Braces</h3>
+                <p>Professional custom braces and supports designed specifically for your body and your condition.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="reviews">
+        <div class="section-header">
+            <h2>What Our Patients Say</h2>
+            <p>Real reviews from real patients</p>
+        </div>
+        <div class="test-grid">
+            <div class="test-card fade-up">
+                <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <p>"I have been going to chiropractors for over 20 years. Dr. Dalton gave me relief from my chronic back pain that no one else could. He is thorough, knowledgeable, and genuinely cares about his patients."</p>
+                <div class="author">Eric J. <span>— Corpus Christi</span></div>
+            </div>
+            <div class="test-card fade-up">
+                <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <p>"I can finally eat and sleep comfortably after years of pain. Dr. Dalton took the time to understand my condition and created a treatment plan that actually works. I'm so grateful I found Coastal Bend."</p>
+                <div class="author">Angela P. <span>— Corpus Christi</span></div>
+            </div>
+            <div class="test-card fade-up">
+                <div class="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</div>
+                <p>"Dr. Dalton is one of the best chiropractors in town. He helped me with my wrist pain that I'd been dealing with for years. Professional, caring, and highly skilled. I recommend him to everyone."</p>
+                <div class="author">Eric Smith <span>— Corpus Christi</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us" id="about">
+        <div class="why-content fade-up">
+            <h2>Why Corpus Christi Trusts Dr. Dalton</h2>
+            <p>Dr. Dalton and the Coastal Bend Family Chiropractic team are dedicated to helping you live a pain-free life. With expertise in chiropractic care, acupuncture, vertigo treatment, and functional medicine, they provide comprehensive care for your whole family.</p>
+            <p>Every patient receives a personalized treatment plan — because your body and your pain are unique.</p>
+            <ul class="why-list">
+                <li>Chiropractic care for the whole family</li>
+                <li>Acupuncture and functional medicine</li>
+                <li>Specialized vertigo treatment</li>
+                <li>Custom braces and rehabilitation</li>
+                <li>Personalized treatment plans</li>
+                <li>Warm, welcoming environment</li>
+            </ul>
+        </div>
+        <div class="why-image fade-up">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600" alt="Chiropractic care">
+        </div>
+    </section>
+
+    <!-- CONDITIONS -->
+    <section class="conditions" id="conditions">
+        <div class="section-header">
+            <h2>Conditions We Treat</h2>
+            <p>Finding relief is just one appointment away</p>
+        </div>
+        <div class="conditions-grid">
+            <div class="condition-item fade-up">
+                <div class="icon">&#129464;</div>
+                <h4>Back Pain</h4>
+                <p>Chronic and acute</p>
+            </div>
+            <div class="condition-item fade-up">
+                <div class="icon">&#128257;</div>
+                <h4>Vertigo</h4>
+                <p>Dizziness and balance</p>
+            </div>
+            <div class="condition-item fade-up">
+                <div class="icon">&#129461;</div>
+                <h4>Neck Pain</h4>
+                <p>Tension and stiffness</p>
+            </div>
+            <div class="condition-item fade-up">
+                <div class="icon">&#129507;</div>
+                <h4>Wrist Pain</h4>
+                <p>Carpal tunnel and more</p>
+            </div>
+            <div class="condition-item fade-up">
+                <div class="icon">&#128170;</div>
+                <h4>Headaches</h4>
+                <p>Migraines and tension</p>
+            </div>
+            <div class="condition-item fade-up">
+                <div class="icon">&#129477;</div>
+                <h4>Joint Pain</h4>
+                <p>Shoulders, knees, hips</p>
+            </div>
+            <div class="condition-item fade-up">
+                <div class="icon">&#129496;</div>
+                <h4>Sciatica</h4>
+                <p>Radiating leg pain</p>
+            </div>
+            <div class="condition-item fade-up">
+                <div class="icon">&#128171;</div>
+                <h4>Injuries</h4>
+                <p>Auto and work accidents</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <h2>Ready to Feel Better?</h2>
+        <p>Book your appointment today and take the first step toward a pain-free life.</p>
+        <a href="mailto:connect@coastalbendchiro.com" class="btn btn-teal" style="font-size:1.1rem;padding:18px 50px;">Book Your Appointment</a>
+        <a href="mailto:connect@coastalbendchiro.com" class="cta-phone">connect@coastalbendchiro.com</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Coastal Bend Family Chiropractic</strong> — Corpus Christi, TX</p>
+        <p style="margin-top:8px;"><a href="mailto:connect@coastalbendchiro.com">connect@coastalbendchiro.com</a></p>
+        <p style="margin-top:15px;font-size:0.8rem;">Chiropractic | Acupuncture | Vertigo Treatment | Functional Medicine</p>
+    </footer>
+
+    <!-- ANIMATION -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
