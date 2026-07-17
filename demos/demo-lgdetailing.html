@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LG Mobile Detailing — Premium Auto Detailing | Arlington, TX & DFW</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --black: #050505;
+            --dark: #0b0b0b;
+            --carbon: #141414;
+            --gunmetal: #1c1c1e;
+            --orange: #e8621a;
+            --orange-bright: #ff7b2e;
+            --orange-glow: rgba(232,98,26,0.3);
+            --amber: #f0a500;
+            --white: #f2f0ed;
+            --silver: #c0bdb8;
+            --gray: #6b6b6b;
+        }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            color: var(--white);
+            background: var(--black);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        a { text-decoration: none; }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(5,5,5,0.9);
+            backdrop-filter: blur(20px);
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+        }
+
+        .logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .logo span {
+            color: var(--orange);
+        }
+
+        .nav-links a {
+            color: var(--silver);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--orange); }
+
+        .nav-cta {
+            background: var(--orange) !important;
+            color: var(--black) !important;
+            padding: 10px 26px !important;
+            font-weight: 700 !important;
+            margin-left: 30px !important;
+            transition: background 0.3s !important;
+        }
+
+        .nav-cta:hover { background: var(--orange-bright) !important; }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.25) contrast(1.2);
+        }
+
+        .hero-gradient {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(135deg, rgba(5,5,5,0.9) 0%, transparent 50%),
+                linear-gradient(180deg, transparent 60%, rgba(5,5,5,1) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 80px;
+            max-width: 750px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .hero-tag .line {
+            width: 40px;
+            height: 2px;
+            background: var(--orange);
+        }
+
+        .hero-tag span {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--orange);
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+        }
+
+        .hero h1 .outline {
+            -webkit-text-stroke: 1.5px var(--white);
+            color: transparent;
+        }
+
+        .hero h1 .orange {
+            color: var(--orange);
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: var(--silver);
+            margin-bottom: 40px;
+            max-width: 480px;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 45px;
+            padding-left: 20px;
+            border-left: 3px solid var(--orange);
+        }
+
+        .hero-stat .num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .hero-stat .label {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 45px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-orange {
+            background: var(--orange);
+            color: var(--black);
+            border-color: var(--orange);
+        }
+
+        .btn-orange:hover {
+            background: var(--orange-bright);
+            border-color: var(--orange-bright);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px var(--orange-glow);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--white);
+            border-color: rgba(255,255,255,0.2);
+            margin-left: 15px;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--white);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* SCROLL INDICATOR */
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            text-align: center;
+        }
+
+        .scroll-hint span {
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gray);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(var(--orange), transparent);
+            margin: 0 auto;
+            animation: scrollPulse 2s infinite;
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /* STRIP */
+        .strip {
+            background: var(--orange);
+            padding: 18px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .strip-inner {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+        }
+
+        .strip span {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--black);
+            margin-right: 80px;
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* SERVICES — diagonal layout */
+        .services {
+            padding: 120px 0;
+            background: var(--dark);
+            position: relative;
+        }
+
+        .services .section-head {
+            text-align: center;
+            margin-bottom: 80px;
+            padding: 0 40px;
+        }
+
+        .services .section-head h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .services .section-head p {
+            color: var(--gray);
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .services-list {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .svc-row {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 0;
+            margin-bottom: 3px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            min-height: 200px;
+        }
+
+        .svc-row:nth-child(even) {
+            grid-template-columns: 1.5fr 1fr;
+        }
+
+        .svc-row:nth-child(even) .svc-img {
+            order: -1;
+        }
+
+        .svc-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 50px;
+            background: var(--carbon);
+            position: relative;
+        }
+
+        .svc-info::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--orange);
+            transform: scaleY(0);
+            transition: transform 0.4s ease;
+        }
+
+        .svc-row:hover .svc-info::before {
+            transform: scaleY(1);
+        }
+
+        .svc-num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.04);
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .svc-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            transition: color 0.3s;
+        }
+
+        .svc-row:hover .svc-info h3 {
+            color: var(--orange);
+        }
+
+        .svc-info p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .svc-img {
+            overflow: hidden;
+        }
+
+        .svc-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease, filter 0.4s;
+            filter: brightness(0.8) saturate(0.9);
+        }
+
+        .svc-row:hover .svc-img img {
+            transform: scale(1.05);
+            filter: brightness(0.9) saturate(1);
+        }
+
+        /* WHY — dark with accent */
+        .why {
+            padding: 120px 40px;
+            background: var(--carbon);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why::before {
+            content: 'LG';
+            position: absolute;
+            top: -60px;
+            right: -40px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 30rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.015);
+            pointer-events: none;
+            line-height: 1;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+            position: relative;
+        }
+
+        .why-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            line-height: 1.15;
+        }
+
+        .why-content h2 .orange { color: var(--orange); }
+
+        .why-content p {
+            color: var(--silver);
+            font-size: 1.05rem;
+            font-weight: 300;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .why-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .why-feat {
+            padding: 20px;
+            background: var(--gunmetal);
+            border-radius: 8px;
+            border-left: 3px solid var(--orange);
+        }
+
+        .why-feat h4 {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+            color: var(--white);
+        }
+
+        .why-feat p {
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-weight: 300;
+            margin-bottom: 0;
+        }
+
+        .why-visual {
+            position: relative;
+        }
+
+        .why-visual img {
+            width: 100%;
+            border-radius: 4px;
+            filter: brightness(0.85);
+        }
+
+        .why-visual .accent-line {
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 80px;
+            height: 80px;
+            border-top: 3px solid var(--orange);
+            border-left: 3px solid var(--orange);
+        }
+
+        .why-visual .accent-line2 {
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            width: 80px;
+            height: 80px;
+            border-bottom: 3px solid var(--orange);
+            border-right: 3px solid var(--orange);
+        }
+
+        /* PROCESS — numbered steps */
+        .process {
+            padding: 100px 40px;
+            background: var(--dark);
+        }
+
+        .process .section-head {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .process .section-head h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .process .section-head p {
+            color: var(--gray);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .proc-step {
+            padding: 40px 35px;
+            border-right: 1px solid rgba(255,255,255,0.06);
+            position: relative;
+            transition: background 0.3s;
+        }
+
+        .proc-step:last-child { border-right: none; }
+
+        .proc-step:hover {
+            background: var(--carbon);
+        }
+
+        .proc-step .step-num {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: rgba(232,98,26,0.15);
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+
+        .proc-step:hover .step-num {
+            color: var(--orange);
+        }
+
+        .proc-step h3 {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .proc-step p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* TESTIMONIALS — horizontal */
+        .testimonials {
+            padding: 100px 40px;
+            background: var(--black);
+            overflow: hidden;
+        }
+
+        .testimonials .section-head {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .testimonials .section-head h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .testimonials .section-head p {
+            color: var(--gray);
+        }
+
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .test-card {
+            background: var(--carbon);
+            padding: 40px 30px;
+            border-top: 3px solid var(--orange);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .test-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .test-card .quote-mark {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: rgba(232,98,26,0.2);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .test-card p {
+            color: var(--silver);
+            font-size: 0.95rem;
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .test-card .test-author {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--white);
+        }
+
+        .test-card .test-author span {
+            display: block;
+            font-family: 'Barlow', sans-serif;
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 300;
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 3px;
+        }
+
+        /* BEFORE/AFTER — visual impact */
+        .ba {
+            padding: 100px 40px;
+            background: var(--dark);
+        }
+
+        .ba .section-head {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .ba .section-head h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .ba .section-head p {
+            color: var(--gray);
+        }
+
+        .ba-grid {
+            display: grid;
+            grid-template-columns: 1fr 80px 1fr;
+            gap: 0;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .ba-side {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .ba-side img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .ba-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 4px;
+        }
+
+        .ba-label.before {
+            background: rgba(255,255,255,0.15);
+            color: var(--white);
+        }
+
+        .ba-label.after {
+            background: var(--orange);
+            color: var(--black);
+        }
+
+        .ba-arrow {
+            text-align: center;
+        }
+
+        .ba-arrow svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--orange);
+        }
+
+        /* CTA */
+        .cta {
+            position: relative;
+            padding: 140px 40px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .cta-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .cta-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.15) contrast(1.1);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta h2 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 4px;
+        }
+
+        .cta h2 .orange { color: var(--orange); }
+
+        .cta p {
+            color: var(--silver);
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta .btn-orange {
+            font-size: 1rem;
+            padding: 20px 55px;
+        }
+
+        .cta-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .cta-info a {
+            color: var(--silver);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .cta-info a:hover { color: var(--orange); }
+
+        /* FOOTER */
+        footer {
+            background: var(--black);
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        footer .logo-foot {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        footer .logo-foot span { color: var(--orange); }
+
+        footer p {
+            color: var(--gray);
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        footer a { color: var(--orange); text-decoration: none; }
+
+        /* ANIMATIONS */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: all 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-left {
+            opacity: 0;
+            transform: translateX(-35px);
+            transition: all 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+        }
+
+        .fade-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-right {
+            opacity: 0;
+            transform: translateX(35px);
+            transition: all 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+        }
+
+        .fade-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* MOBILE */
+        @media (max-width: 768px) {
+            nav { padding: 12px 20px; }
+            .nav-links { display: none; }
+            .hero-content { padding: 0 25px; }
+            .hero h1 { font-size: 3rem; }
+            .hero-stats { flex-wrap: wrap; gap: 20px; }
+            .svc-row, .svc-row:nth-child(even) { grid-template-columns: 1fr; }
+            .svc-row:nth-child(even) .svc-img { order: 0; }
+            .svc-img { height: 250px; }
+            .why-grid { grid-template-columns: 1fr; gap: 40px; }
+            .why-features { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr; }
+            .proc-step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); }
+            .test-grid { grid-template-columns: 1fr; }
+            .ba-grid { grid-template-columns: 1fr; gap: 20px; }
+            .ba-arrow { transform: rotate(90deg); }
+            .cta h2 { font-size: 2.2rem; }
+            .services .section-head h2, .why-content h2 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="logo">LG <span>DETAILING</span></div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#why">Why Us</a>
+            <a href="#process">Process</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact" class="nav-cta">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1920" alt="Premium car">
+        </div>
+        <div class="hero-gradient"></div>
+        <div class="hero-content">
+            <div class="hero-tag">
+                <div class="line"></div>
+                <span>Premium Mobile Detailing</span>
+            </div>
+            <h1>
+                <span class="outline">WE COME</span><br>
+                TO <span class="orange">YOU</span>
+            </h1>
+            <p class="hero-sub">13 years of experience bringing showroom-quality detailing directly to your driveway. Serving Arlington, Dallas, Fort Worth, and the entire DFW metroplex.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num">13</div>
+                    <div class="label">Years Experience</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">DFW</div>
+                    <div class="label">Metroplex Wide</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">100%</div>
+                    <div class="label">Mobile Service</div>
+                </div>
+            </div>
+            <div>
+                <a href="#contact" class="btn btn-orange">Book Your Detail</a>
+                <a href="#services" class="btn btn-ghost">View Services</a>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- STRIP -->
+    <div class="strip">
+        <div class="strip-inner">
+            <span>EXTERIOR DETAIL</span>
+            <span>INTERIOR DETAIL</span>
+            <span>FULL DETAIL</span>
+            <span>PAINT CORRECTION</span>
+            <span>CERAMIC COATING</span>
+            <span>HEADLIGHT RESTORATION</span>
+            <span>ENGINE BAY CLEANING</span>
+            <span>MOBILE SERVICE</span>
+            <span>EXTERIOR DETAIL</span>
+            <span>INTERIOR DETAIL</span>
+            <span>FULL DETAIL</span>
+            <span>PAINT CORRECTION</span>
+            <span>CERAMIC COATING</span>
+            <span>HEADLIGHT RESTORATION</span>
+            <span>ENGINE BAY CLEANING</span>
+            <span>MOBILE SERVICE</span>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="section-head">
+            <h2>What We Do</h2>
+            <p>Professional detailing services brought to your location</p>
+        </div>
+        <div class="services-list">
+            <div class="svc-row fade-up">
+                <div class="svc-info">
+                    <div class="svc-num">01</div>
+                    <h3>Full Detail</h3>
+                    <p>Complete interior and exterior transformation. Deep cleaning, paint correction, wax protection, and interior shampooing. Your car looks and feels brand new.</p>
+                </div>
+                <div class="svc-img">
+                    <img src="https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=800" alt="Full detail">
+                </div>
+            </div>
+            <div class="svc-row fade-up">
+                <div class="svc-info">
+                    <div class="svc-num">02</div>
+                    <h3>Exterior Detail</h3>
+                    <p>Hand wash, clay bar treatment, paint correction, and premium wax or sealant. Restore depth, clarity, and gloss to your paint.</p>
+                </div>
+                <div class="svc-img">
+                    <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800" alt="Exterior detail">
+                </div>
+            </div>
+            <div class="svc-row fade-up">
+                <div class="svc-info">
+                    <div class="svc-num">03</div>
+                    <h3>Interior Detail</h3>
+                    <p>Deep cleaning of every surface. Leather conditioning, carpet shampooing, dashboard restoration, and odor elimination. Like stepping into a new car.</p>
+                </div>
+                <div class="svc-img">
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800" alt="Interior detail">
+                </div>
+            </div>
+            <div class="svc-row fade-up">
+                <div class="svc-info">
+                    <div class="svc-num">04</div>
+                    <h3>Ceramic Coating</h3>
+                    <p>Long-lasting paint protection that repels water, dirt, and UV rays. Your car stays cleaner longer and maintains that showroom shine for years.</p>
+                </div>
+                <div class="svc-img">
+                    <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=800" alt="Ceramic coating">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="why" id="why">
+        <div class="why-grid">
+            <div class="why-content fade-left">
+                <h2>13 YEARS OF<br><span class="orange">PERFECTING</span><br>THE CRAFT</h2>
+                <p>LG Mobile Detailing has been serving the DFW metroplex for over a decade. We come to your home, your office, or wherever your car is — because your time matters.</p>
+                <p>No driving to a shop. No waiting in line. We bring everything to you and leave your car looking better than the day you bought it.</p>
+                <div class="why-features">
+                    <div class="why-feat">
+                        <h4>We Come To You</h4>
+                        <p>Home, office, or anywhere in DFW</p>
+                    </div>
+                    <div class="why-feat">
+                        <h4>13 Years Experience</h4>
+                        <p>Thousands of cars detailed</p>
+                    </div>
+                    <div class="why-feat">
+                        <h4>Premium Products</h4>
+                        <p>Professional-grade only</p>
+                    </div>
+                    <div class="why-feat">
+                        <h4>DFW Wide</h4>
+                        <p>Arlington, Dallas, Fort Worth & beyond</p>
+                    </div>
+                </div>
+            </div>
+            <div class="why-visual fade-right">
+                <div class="accent-line"></div>
+                <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800" alt="Detailed car">
+                <div class="accent-line2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+        <div class="section-head">
+            <h2>How It Works</h2>
+            <p>Three simple steps to a showroom-quality car</p>
+        </div>
+        <div class="process-steps">
+            <div class="proc-step fade-up">
+                <div class="step-num">01</div>
+                <h3>Book</h3>
+                <p>Send us a message or email. Tell us your car, your location, and what service you need. We'll confirm your appointment.</p>
+            </div>
+            <div class="proc-step fade-up">
+                <div class="step-num">02</div>
+                <h3>We Arrive</h3>
+                <p>We come to your location with everything needed — water, power, products, equipment. You don't need to provide anything.</p>
+            </div>
+            <div class="proc-step fade-up">
+                <div class="step-num">03</div>
+                <h3>Enjoy</h3>
+                <p>Walk out to a car that looks better than the day you bought it. Showroom shine, fresh interior, and that new car feeling.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="reviews">
+        <div class="section-head">
+            <h2>What Clients Say</h2>
+            <p>Real reviews from DFW car owners</p>
+        </div>
+        <div class="test-grid">
+            <div class="test-card fade-up">
+                <div class="quote-mark">"</div>
+                <p>LG Detailing came to my house and made my 5-year-old truck look brand new. The paint correction alone was worth it. I couldn't believe the difference.</p>
+                <div class="test-author">
+                    David M.
+                    <span>Arlington, TX</span>
+                </div>
+            </div>
+            <div class="test-card fade-up">
+                <div class="quote-mark">"</div>
+                <p>I've tried other mobile detailers in DFW and nobody comes close to LG. The attention to detail is incredible. They even cleaned spots I didn't know were dirty.</p>
+                <div class="test-author">
+                    Jessica R.
+                    <span>Fort Worth, TX</span>
+                </div>
+            </div>
+            <div class="test-card fade-up">
+                <div class="quote-mark">"</div>
+                <p>Having them come to my office was a game changer. I went in to work, came out to a perfectly detailed car. No wasted weekend. Highly recommend.</p>
+                <div class="test-author">
+                    Marcus T.
+                    <span>Dallas, TX</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE/AFTER -->
+    <section class="ba">
+        <div class="section-head">
+            <h2>The Difference</h2>
+            <p>Before and after LG Mobile Detailing</p>
+        </div>
+        <div class="ba-grid fade-up">
+            <div class="ba-side">
+                <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600" alt="Before detailing">
+                <div class="ba-label before">Before</div>
+            </div>
+            <div class="ba-arrow">
+                <svg viewBox="0 0 24 24"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+            </div>
+            <div class="ba-side">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600" alt="After detailing">
+                <div class="ba-label after">After</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="cta-bg">
+            <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920" alt="Luxury car">
+        </div>
+        <div class="cta-content">
+            <h2>YOUR CAR DESERVES<br><span class="orange">THE BEST</span></h2>
+            <p>Book your mobile detail today. We come to you — anywhere in the DFW metroplex.</p>
+            <a href="mailto:contact@lgmobiledetailing.com" class="btn btn-orange">Book Your Detail</a>
+            <div class="cta-info">
+                <a href="mailto:contact@lgmobiledetailing.com">contact@lgmobiledetailing.com</a>
+                <span style="color:var(--gray);">|</span>
+                <a href="#">Arlington, TX & DFW</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo-foot">LG <span>MOBILE DETAILING</span></div>
+        <p>Premium Auto Detailing — Arlington, TX & DFW Metroplex</p>
+        <p><a href="mailto:contact@lgmobiledetailing.com">contact@lgmobiledetailing.com</a></p>
+        <p style="margin-top:15px;font-size:0.7rem;color:var(--gray);">Exterior Detail | Interior Detail | Full Detail | Ceramic Coating | Paint Correction</p>
+    </footer>
+
+    <!-- ANIMATION -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
