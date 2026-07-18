@@ -3,39 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Cleaning OKC — Professional Cleaning Services | Oklahoma City</title>
+    <title>All Cleaning OKC — Professional Cleaning | Oklahoma City</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
             --green-deep: #1a3c34;
             --green: #2d6a4f;
-            --green-soft: #40916c;
+            --green-bright: #40916c;
             --green-light: #95d5b2;
             --green-pale: #d8f3dc;
-            --white: #ffffff;
-            --off-white: #fafaf7;
-            --cream: #f5f1ea;
-            --warm: #ede8df;
-            --dark: #1a1a1a;
-            --gray: #6b6b6b;
-            --gray-light: #b5b5b5;
-            --gold: #c4a35a;
-            --gold-light: #dcc99a;
+            --dark: #0f1a16;
+            --dark-2: #162220;
+            --dark-3: #1c2e29;
+            --white: #f2f0ed;
+            --cream: #ede8df;
+            --gray: #8a9a94;
+            --gray-light: #b5c4be;
+            --gold: #d4a843;
         }
 
         body {
-            font-family: 'Karla', sans-serif;
-            color: var(--dark);
+            font-family: 'Manrope', sans-serif;
+            color: var(--white);
+            background: var(--dark);
             line-height: 1.7;
-            background: var(--off-white);
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Cormorant Garamond', serif;
-            font-weight: 500;
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
         }
 
         a { text-decoration: none; }
@@ -45,143 +44,130 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(250,250,247,0.95);
+            background: rgba(15,26,22,0.95);
             backdrop-filter: blur(15px);
-            padding: 18px 60px;
+            padding: 18px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid rgba(26,60,52,0.08);
+            border-bottom: 1px solid rgba(149,213,178,0.1);
         }
 
         .logo {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'DM Serif Display', serif;
             font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--green-deep);
-            letter-spacing: 1px;
+            color: var(--white);
         }
 
-        .logo em {
-            color: var(--green-soft);
-            font-weight: 400;
-        }
+        .logo span { color: var(--green-light); }
 
         .nav-links a {
-            color: var(--gray);
+            color: var(--gray-light);
             text-decoration: none;
-            margin-left: 32px;
-            font-size: 0.82rem;
-            font-weight: 500;
+            margin-left: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
             letter-spacing: 0.5px;
             transition: color 0.3s;
         }
 
-        .nav-links a:hover { color: var(--green); }
+        .nav-links a:hover { color: var(--green-light); }
 
         .nav-phone {
-            color: var(--green) !important;
-            font-weight: 600 !important;
-            font-size: 0.85rem !important;
+            color: var(--green-light) !important;
+            font-weight: 700 !important;
         }
 
-        /* HERO — editorial split with organic feel */
+        /* HERO */
         .hero {
             min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            padding-top: 80px;
-        }
-
-        .hero-left {
+            position: relative;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 80px 80px 80px 100px;
+            align-items: center;
+            overflow: hidden;
         }
 
-        .hero-location {
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.25);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15,26,22,0.9) 0%, rgba(15,26,22,0.5) 50%, rgba(15,26,22,0.8) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 0 80px;
+            max-width: 850px;
+        }
+
+        .hero-tag {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 30px;
+            gap: 12px;
+            background: rgba(45,106,79,0.2);
+            border: 1px solid rgba(149,213,178,0.2);
+            padding: 10px 24px;
+            border-radius: 50px;
+            margin-bottom: 35px;
         }
 
-        .hero-location .dot {
+        .hero-tag .dot {
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: var(--green-soft);
+            background: var(--green-light);
         }
 
-        .hero-location span {
-            font-size: 0.78rem;
+        .hero-tag span {
+            font-size: 0.82rem;
             font-weight: 600;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--green-soft);
+            color: var(--green-light);
         }
 
         .hero h1 {
-            font-size: 4.2rem;
-            color: var(--green-deep);
+            font-size: 4.5rem;
             line-height: 1.1;
             margin-bottom: 25px;
+            color: var(--white);
         }
 
         .hero h1 em {
-            font-style: italic;
-            color: var(--green-soft);
-            font-weight: 400;
+            color: var(--green-light);
+            font-style: normal;
         }
 
-        .hero h1 .gold {
-            color: var(--gold);
-        }
-
-        .hero-text {
-            font-size: 1.1rem;
-            color: var(--gray);
+        .hero p {
+            font-size: 1.2rem;
             font-weight: 300;
-            line-height: 1.9;
-            margin-bottom: 40px;
-            max-width: 480px;
-        }
-
-        .hero-badges {
-            display: flex;
-            gap: 20px;
+            color: var(--gray-light);
+            max-width: 550px;
             margin-bottom: 45px;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .badge-green {
-            background: var(--green-pale);
-            color: var(--green-deep);
-        }
-
-        .badge-gold {
-            background: rgba(196,163,90,0.12);
-            color: var(--gold);
+            line-height: 1.9;
         }
 
         .btn {
             display: inline-block;
-            padding: 16px 42px;
+            padding: 18px 45px;
             border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.9rem;
+            font-weight: 700;
+            font-size: 0.95rem;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
             border: 2px solid transparent;
@@ -195,113 +181,82 @@
         }
 
         .btn-green:hover {
-            background: var(--green-deep);
-            border-color: var(--green-deep);
+            background: var(--green-bright);
+            border-color: var(--green-bright);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(45,106,79,0.2);
+            box-shadow: 0 12px 35px rgba(45,106,79,0.3);
         }
 
         .btn-ghost {
             background: transparent;
-            color: var(--green);
-            border-color: var(--green);
+            color: var(--white);
+            border-color: rgba(255,255,255,0.3);
             margin-left: 15px;
         }
 
         .btn-ghost:hover {
-            background: var(--green);
-            color: var(--white);
+            border-color: var(--white);
+            background: rgba(255,255,255,0.05);
         }
 
-        .hero-right {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-right img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-right .hero-card {
-            position: absolute;
-            bottom: 40px;
-            left: -60px;
-            background: var(--white);
-            padding: 25px 35px;
-            border-radius: 16px;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+        .hero-stats {
             display: flex;
-            align-items: center;
-            gap: 18px;
-            max-width: 320px;
+            gap: 50px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
 
-        .hero-card .icon-circle {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
-            background: var(--green-pale);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
+        .hero-stat .num {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.5rem;
+            color: var(--green-light);
         }
 
-        .hero-card .card-text .num {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
+        .hero-stat .label {
+            font-size: 0.78rem;
             font-weight: 600;
-            color: var(--green-deep);
-            line-height: 1;
-        }
-
-        .hero-card .card-text .label {
-            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
             color: var(--gray);
-            font-weight: 500;
         }
 
         /* TRUST STRIP */
         .trust {
-            display: flex;
-            justify-content: center;
-            gap: 80px;
-            padding: 55px 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             background: var(--green-deep);
-            flex-wrap: wrap;
         }
 
         .trust-item {
+            padding: 45px 30px;
             text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.06);
         }
 
+        .trust-item:last-child { border-right: none; }
+
         .trust-item .num {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
+            font-family: 'DM Serif Display', serif;
+            font-size: 3rem;
             color: var(--white);
         }
 
-        .trust-item .num em {
-            color: var(--green-light);
-            font-weight: 400;
-        }
+        .trust-item .num span { color: var(--green-light); }
 
         .trust-item .label {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: var(--green-light);
-            font-weight: 500;
+            font-weight: 600;
+            margin-top: 5px;
         }
 
-        /* SERVICES — editorial list */
+        /* SERVICES */
         .services {
-            padding: 120px 100px;
-            max-width: 1400px;
+            padding: 120px 60px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
@@ -312,282 +267,265 @@
         .section-head.center { text-align: center; }
 
         .section-head .overline {
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--green-soft);
-            margin-bottom: 12px;
             display: flex;
             align-items: center;
             gap: 12px;
+            margin-bottom: 15px;
         }
 
         .section-head.center .overline { justify-content: center; }
 
         .section-head .overline .line {
-            width: 30px;
-            height: 1px;
-            background: var(--green-soft);
+            width: 35px;
+            height: 2px;
+            background: var(--green-bright);
+        }
+
+        .section-head .overline span {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--green-bright);
         }
 
         .section-head h2 {
-            font-size: 3rem;
-            color: var(--green-deep);
+            font-size: 3.2rem;
+            color: var(--white);
             line-height: 1.15;
+            margin-bottom: 15px;
         }
 
-        .section-head h2 em {
-            font-style: italic;
-            color: var(--green-soft);
-        }
+        .section-head h2 em { color: var(--green-light); }
 
         .section-head p {
             color: var(--gray);
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             font-weight: 300;
-            max-width: 500px;
-            margin-top: 15px;
+            max-width: 550px;
+            line-height: 1.8;
         }
 
-        .section-head.center p { margin: 15px auto 0; }
+        .section-head.center p { margin: 0 auto; }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
+            gap: 20px;
         }
 
-        .svc-item {
+        .svc-card {
+            background: var(--dark-2);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 16px;
+            padding: 45px 35px;
+            transition: all 0.3s ease;
             position: relative;
-            padding: 50px 40px;
-            background: var(--white);
-            transition: all 0.4s ease;
             overflow: hidden;
-            cursor: pointer;
         }
 
-        .svc-item::after {
+        .svc-card::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: var(--green);
+            height: 4px;
+            background: linear-gradient(90deg, var(--green), var(--green-light));
             transform: scaleX(0);
             transition: transform 0.4s ease;
             transform-origin: left;
         }
 
-        .svc-item:hover::after {
-            transform: scaleX(1);
+        .svc-card:hover::before { transform: scaleX(1); }
+
+        .svc-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(149,213,178,0.15);
+            background: var(--dark-3);
         }
 
-        .svc-item:hover {
-            background: var(--green-pale);
+        .svc-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: rgba(45,106,79,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
         }
 
-        .svc-item .svc-num {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--green-pale);
-            margin-bottom: 18px;
-            transition: color 0.3s;
-        }
-
-        .svc-item:hover .svc-num {
-            color: var(--green-light);
-        }
-
-        .svc-item h3 {
-            font-size: 1.4rem;
-            color: var(--green-deep);
+        .svc-card h3 {
+            font-size: 1.5rem;
+            color: var(--white);
             margin-bottom: 12px;
-            letter-spacing: 1px;
         }
 
-        .svc-item p {
+        .svc-card p {
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 300;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
-        /* IMAGE BREAK — full width */
-        .image-break {
+        /* IMAGE SECTIONS */
+        .img-section {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 500px;
+            grid-template-columns: 1.2fr 1fr;
+            min-height: 600px;
         }
 
-        .image-break .img-side {
+        .img-section .img-side {
             overflow: hidden;
         }
 
-        .image-break .img-side img {
+        .img-section .img-side img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.8s ease;
         }
 
-        .image-break:hover .img-side img {
+        .img-section:hover .img-side img {
             transform: scale(1.03);
         }
 
-        .image-break .content-side {
+        .img-section .text-side {
             display: flex;
             flex-direction: column;
             justify-content: center;
             padding: 80px 70px;
+            background: var(--dark-2);
+        }
+
+        .img-section .text-side.light {
             background: var(--green-deep);
         }
 
-        .image-break .content-side .overline {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--green-light);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .image-break .content-side .overline .line {
-            width: 25px;
-            height: 1px;
-            background: var(--green-light);
-        }
-
-        .image-break .content-side h2 {
-            font-size: 2.5rem;
+        .text-side h2 {
+            font-size: 2.8rem;
             color: var(--white);
-            margin-bottom: 20px;
             line-height: 1.2;
+            margin-bottom: 25px;
         }
 
-        .image-break .content-side h2 em {
-            color: var(--green-light);
-            font-style: italic;
-        }
+        .text-side h2 em { color: var(--green-light); }
 
-        .image-break .content-side p {
-            color: rgba(255,255,255,0.7);
-            font-size: 1rem;
+        .text-side p {
+            color: var(--gray-light);
+            font-size: 1.1rem;
             font-weight: 300;
             line-height: 1.9;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        .image-break .content-side .features {
+        .text-side .feat-list {
+            list-style: none;
             margin-top: 25px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
         }
 
-        .features .feat {
+        .feat-list li {
+            padding: 12px 0;
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--white);
             display: flex;
             align-items: center;
-            gap: 10px;
-            color: var(--white);
-            font-size: 0.85rem;
-            font-weight: 500;
+            gap: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        .features .feat::before {
-            content: '✓';
-            color: var(--green-light);
-            font-weight: 700;
+        .feat-list li:last-child { border-bottom: none; }
+
+        .feat-list li::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--green);
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+            background-size: 13px;
+            background-repeat: no-repeat;
+            background-position: center;
         }
 
-        /* REVERSED IMAGE BREAK */
-        .image-break.reversed { direction: rtl; }
-        .image-break.reversed .content-side { direction: ltr; background: var(--cream); }
-        .image-break.reversed .content-side .overline { color: var(--green); }
-        .image-break.reversed .content-side .overline .line { background: var(--green); }
-        .image-break.reversed .content-side h2 { color: var(--green-deep); }
-        .image-break.reversed .content-side h2 em { color: var(--green-soft); }
-        .image-break.reversed .content-side p { color: var(--gray); }
-        .image-break.reversed .content-side .feat { color: var(--green-deep); }
-        .image-break.reversed .content-side .feat::before { color: var(--green); }
+        /* REVERSED */
+        .img-section.reversed {
+            grid-template-columns: 1fr 1.2fr;
+        }
+
+        .img-section.reversed .img-side { order: 2; }
 
         /* TESTIMONIALS */
         .testimonials {
-            padding: 120px 100px;
-            background: var(--off-white);
+            padding: 120px 60px;
+            background: var(--dark-2);
         }
 
         .test-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .test-card {
-            background: var(--white);
+            background: var(--dark);
             padding: 45px 40px;
-            border-radius: 4px;
-            position: relative;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: transform 0.3s, border-color 0.3s;
         }
 
         .test-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(26,60,52,0.08);
-        }
-
-        .test-card .green-bar {
-            width: 40px;
-            height: 3px;
-            background: var(--green);
-            margin-bottom: 25px;
+            transform: translateY(-4px);
+            border-color: rgba(149,213,178,0.15);
         }
 
         .test-card .stars {
             color: var(--gold);
-            font-size: 0.85rem;
+            font-size: 1rem;
             letter-spacing: 3px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .test-card blockquote {
-            font-family: 'Cormorant Garamond', serif;
+            font-family: 'DM Serif Display', serif;
             font-size: 1.2rem;
-            font-style: italic;
-            color: var(--dark);
-            line-height: 1.8;
-            margin-bottom: 25px;
+            color: var(--white);
+            line-height: 1.7;
+            margin-bottom: 30px;
         }
 
         .test-card .test-author {
-            font-weight: 600;
-            color: var(--green-deep);
-            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--green-light);
+            font-size: 1rem;
         }
 
         .test-card .test-author span {
             display: block;
-            font-family: 'Karla', sans-serif;
-            font-weight: 300;
-            font-size: 0.8rem;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 400;
+            font-size: 0.85rem;
             color: var(--gray);
-            margin-top: 3px;
+            margin-top: 5px;
         }
 
         /* PROCESS */
         .process {
-            padding: 120px 100px;
-            background: var(--cream);
+            padding: 120px 60px;
+            background: var(--dark);
         }
 
-        .process-grid {
+        .process-steps {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 0;
@@ -596,14 +534,14 @@
             position: relative;
         }
 
-        .process-grid::before {
+        .process-steps::before {
             content: '';
             position: absolute;
-            top: 32px;
-            left: 15%;
-            right: 15%;
-            height: 1px;
-            background: var(--green-light);
+            top: 40px;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+            background: rgba(149,213,178,0.15);
         }
 
         .proc-step {
@@ -613,15 +551,15 @@
         }
 
         .proc-step .circle {
-            width: 65px;
-            height: 65px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background: var(--white);
+            background: var(--dark-2);
             border: 2px solid var(--green);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 22px;
+            margin: 0 auto 25px;
             position: relative;
             z-index: 1;
             transition: all 0.3s;
@@ -629,36 +567,35 @@
 
         .proc-step:hover .circle {
             background: var(--green);
+            transform: scale(1.1);
         }
 
         .proc-step .circle span {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--green);
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--green-light);
             transition: color 0.3s;
         }
 
         .proc-step:hover .circle span { color: var(--white); }
 
         .proc-step h3 {
-            font-size: 1.15rem;
-            color: var(--green-deep);
-            margin-bottom: 8px;
-            letter-spacing: 1px;
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 10px;
         }
 
         .proc-step p {
             color: var(--gray);
-            font-size: 0.85rem;
+            font-size: 1rem;
             font-weight: 300;
             line-height: 1.7;
         }
 
-        /* AREAS — horizontal with image bg */
+        /* AREAS */
         .areas {
             position: relative;
-            padding: 100px 100px;
+            padding: 120px 60px;
             overflow: hidden;
         }
 
@@ -682,63 +619,60 @@
         }
 
         .areas-content h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--white);
             margin-bottom: 15px;
         }
 
-        .areas-content h2 em {
-            color: var(--green-light);
-            font-style: italic;
-        }
+        .areas-content h2 em { color: var(--green-light); }
 
         .areas-content > p {
-            color: rgba(255,255,255,0.6);
-            font-size: 1rem;
+            color: var(--gray);
+            font-size: 1.1rem;
             font-weight: 300;
-            margin-bottom: 40px;
+            margin-bottom: 45px;
         }
 
         .areas-grid {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .area-tag {
-            padding: 12px 28px;
-            border: 1px solid rgba(255,255,255,0.2);
+            padding: 14px 30px;
+            border: 1px solid rgba(149,213,178,0.2);
             border-radius: 50px;
             color: var(--white);
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             font-weight: 500;
-            letter-spacing: 0.5px;
             transition: all 0.3s;
         }
 
         .area-tag:hover {
             background: var(--green);
             border-color: var(--green);
+            transform: translateY(-2px);
         }
 
         /* GALLERY */
         .gallery {
-            padding: 0;
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 300px 300px;
-            gap: 4px;
+            grid-template-rows: 350px 350px;
+            gap: 6px;
         }
 
         .gallery img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: filter 0.4s, transform 0.6s;
+            transition: transform 0.5s, filter 0.3s;
             cursor: pointer;
+            filter: brightness(0.85);
         }
 
         .gallery img:hover {
@@ -755,39 +689,36 @@
 
         /* CTA */
         .cta {
-            padding: 120px 100px;
+            padding: 120px 60px;
             text-align: center;
-            background: var(--off-white);
+            background: linear-gradient(180deg, var(--dark) 0%, var(--green-deep) 100%);
         }
 
         .cta h2 {
-            font-size: 3rem;
-            color: var(--green-deep);
+            font-size: 3.5rem;
+            color: var(--white);
             margin-bottom: 15px;
         }
 
-        .cta h2 em {
-            color: var(--green-soft);
-            font-style: italic;
-        }
+        .cta h2 em { color: var(--green-light); }
 
         .cta p {
             color: var(--gray);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 300;
-            margin-bottom: 40px;
-            max-width: 500px;
+            margin-bottom: 45px;
+            max-width: 550px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .cta .btn-green {
-            font-size: 1rem;
-            padding: 18px 50px;
+            font-size: 1.05rem;
+            padding: 20px 55px;
         }
 
         .cta-info {
-            margin-top: 30px;
+            margin-top: 35px;
             display: flex;
             justify-content: center;
             gap: 30px;
@@ -795,53 +726,44 @@
         }
 
         .cta-info a {
-            color: var(--green);
+            color: var(--green-light);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
-        .cta-info span {
-            color: var(--gray-light);
-        }
+        .cta-info span { color: var(--gray); }
 
         /* FOOTER */
         footer {
             background: var(--green-deep);
-            padding: 50px 100px;
+            padding: 45px 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 15px;
         }
 
         footer .logo-foot {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.2rem;
-            font-weight: 600;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
             color: var(--white);
         }
 
-        footer .logo-foot em {
-            color: var(--green-light);
-            font-weight: 400;
-        }
+        footer .logo-foot span { color: var(--green-light); }
 
         footer p {
             color: var(--green-light);
-            font-size: 0.8rem;
+            font-size: 0.85rem;
         }
 
-        footer a {
-            color: var(--white);
-            text-decoration: none;
-        }
+        footer a { color: var(--white); text-decoration: none; }
 
         /* ANIMATIONS */
         .fade-up {
             opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease;
+            transform: translateY(35px);
+            transition: all 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
         }
 
         .fade-up.visible {
@@ -851,8 +773,8 @@
 
         .fade-left {
             opacity: 0;
-            transform: translateX(-30px);
-            transition: all 0.8s ease;
+            transform: translateX(-35px);
+            transition: all 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
         }
 
         .fade-left.visible {
@@ -862,8 +784,8 @@
 
         .fade-right {
             opacity: 0;
-            transform: translateX(30px);
-            transition: all 0.8s ease;
+            transform: translateX(35px);
+            transition: all 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
         }
 
         .fade-right.visible {
@@ -873,35 +795,31 @@
 
         /* MOBILE */
         @media (max-width: 768px) {
-            nav { padding: 14px 25px; }
+            nav { padding: 14px 20px; }
             .nav-links { display: none; }
-            .hero { grid-template-columns: 1fr; }
-            .hero-left { padding: 100px 25px 60px; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero-right { height: 400px; }
-            .hero-right .hero-card { left: 20px; }
-            .btn-ghost { margin-left: 0; margin-top: 10px; display: block; }
-            .trust { gap: 30px; padding: 40px 20px; }
-            .trust-item .num { font-size: 1.8rem; }
+            .hero-content { padding: 0 25px; }
+            .hero h1 { font-size: 2.8rem; }
+            .hero-stats { flex-wrap: wrap; gap: 25px; }
+            .hero-stat .num { font-size: 2rem; }
+            .btn-ghost { margin-left: 0; margin-top: 12px; display: block; text-align: center; }
+            .trust { grid-template-columns: 1fr 1fr; }
             .services { padding: 80px 25px; }
             .services-grid { grid-template-columns: 1fr; }
-            .image-break, .image-break.reversed { grid-template-columns: 1fr; direction: ltr; }
-            .image-break .img-side { height: 300px; }
-            .image-break .content-side { padding: 50px 25px; }
-            .image-break .content-side .features { grid-template-columns: 1fr; }
+            .img-section, .img-section.reversed { grid-template-columns: 1fr; }
+            .img-section.reversed .img-side { order: 0; }
+            .img-section .img-side { height: 350px; }
+            .img-section .text-side { padding: 50px 25px; }
             .testimonials { padding: 80px 25px; }
             .test-grid { grid-template-columns: 1fr; }
             .process { padding: 80px 25px; }
-            .process-grid { grid-template-columns: 1fr 1fr; }
-            .process-grid::before { display: none; }
+            .process-steps { grid-template-columns: 1fr 1fr; }
+            .process-steps::before { display: none; }
             .areas { padding: 80px 25px; }
-            .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 250px 250px 250px; }
+            .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: 280px 280px 280px; }
             .gallery img:nth-child(1) { grid-column: span 2; grid-row: span 1; }
             .cta { padding: 80px 25px; }
-            .footer { padding: 40px 25px; }
-            .section-head h2, .image-break .content-side h2, .cta h2, .areas-content h2 { font-size: 2rem; }
-            .services { padding: 80px 20px; }
-            footer { padding: 40px 25px; }
+            .section-head h2, .text-side h2, .cta h2, .areas-content h2 { font-size: 2.3rem; }
+            footer { padding: 35px 25px; }
         }
     </style>
 </head>
@@ -909,7 +827,7 @@
 
     <!-- NAV -->
     <nav>
-        <div class="logo">All Cleaning <em>OKC</em></div>
+        <div class="logo">All Cleaning <span>OKC</span></div>
         <div class="nav-links">
             <a href="#services">Services</a>
             <a href="#about">About</a>
@@ -921,30 +839,37 @@
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-left">
-            <div class="hero-location">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920" alt="Professional cleaning">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-tag">
                 <div class="dot"></div>
                 <span>Oklahoma City, Oklahoma</span>
             </div>
-            <h1>A <em>Clean</em> Home.<br>A <em>Clear</em> Mind.<br><span class="gold">Every Time.</span></h1>
-            <p class="hero-text">All Cleaning OKC brings professional, reliable, and thorough cleaning services to Oklahoma City homes and businesses. We handle the mess so you don't have to.</p>
-            <div class="hero-badges">
-                <div class="badge badge-green">Licensed & Insured</div>
-                <div class="badge badge-green">Eco-Friendly Products</div>
-                <div class="badge badge-gold">OKC Trusted</div>
-            </div>
+            <h1>A <em>Clean Home.</em><br>A Clear Mind.<br>Every Time.</h1>
+            <p>All Cleaning OKC brings professional, reliable, and thorough cleaning to Oklahoma City homes and businesses. We handle the mess so you don't have to.</p>
             <div>
                 <a href="#contact" class="btn btn-green">Get a Free Quote</a>
                 <a href="#services" class="btn btn-ghost">Our Services</a>
             </div>
-        </div>
-        <div class="hero-right">
-            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1000" alt="Professional cleaning">
-            <div class="hero-card">
-                <div class="icon-circle">&#10003;</div>
-                <div class="card-text">
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="num">500+</div>
+                    <div class="label">Homes Cleaned</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">5&#9733;</div>
+                    <div class="label">Google Rating</div>
+                </div>
+                <div class="hero-stat">
                     <div class="num">100%</div>
-                    <div class="label">Satisfaction Guaranteed</div>
+                    <div class="label">Satisfaction</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="num">OKC</div>
+                    <div class="label">Locally Owned</div>
                 </div>
             </div>
         </div>
@@ -953,15 +878,15 @@
     <!-- TRUST STRIP -->
     <div class="trust">
         <div class="trust-item">
-            <div class="num">500<em>+</em></div>
+            <div class="num">500<span>+</span></div>
             <div class="label">Homes Cleaned</div>
         </div>
         <div class="trust-item">
-            <div class="num">100<em>%</em></div>
+            <div class="num">100<span>%</span></div>
             <div class="label">Satisfaction Rate</div>
         </div>
         <div class="trust-item">
-            <div class="num">5<em>&#9733;</em></div>
+            <div class="num">5<span>&#9733;</span></div>
             <div class="label">Google Rating</div>
         </div>
         <div class="trust-item">
@@ -975,86 +900,86 @@
         <div class="section-head">
             <div class="overline">
                 <div class="line"></div>
-                What We Do
+                <span>What We Do</span>
             </div>
             <h2>Professional Cleaning<br><em>Tailored to You</em></h2>
             <p>From weekly house cleaning to deep commercial cleans, we customize every service to fit your needs and schedule.</p>
         </div>
         <div class="services-grid">
-            <div class="svc-item fade-up">
-                <div class="svc-num">01</div>
+            <div class="svc-card fade-up">
+                <div class="svc-icon">&#127968;</div>
                 <h3>Residential Cleaning</h3>
-                <p>Weekly, bi-weekly, or monthly house cleaning. We keep your home spotless so you can focus on what matters most to you.</p>
+                <p>Weekly, bi-weekly, or monthly house cleaning. We keep your home spotless so you can focus on what matters most.</p>
             </div>
-            <div class="svc-item fade-up">
-                <div class="svc-num">02</div>
+            <div class="svc-card fade-up">
+                <div class="svc-icon">&#10024;</div>
                 <h3>Deep Cleaning</h3>
                 <p>Top-to-bottom, thorough cleaning for homes that need extra attention. Perfect for spring cleaning or special occasions.</p>
             </div>
-            <div class="svc-item fade-up">
-                <div class="svc-num">03</div>
+            <div class="svc-card fade-up">
+                <div class="svc-icon">&#127970;</div>
                 <h3>Commercial Cleaning</h3>
                 <p>Offices, retail spaces, and businesses. Professional cleaning that keeps your workplace healthy and presentable.</p>
             </div>
-            <div class="svc-item fade-up">
-                <div class="svc-num">04</div>
+            <div class="svc-card fade-up">
+                <div class="svc-icon">&#128230;</div>
                 <h3>Move-In / Move-Out</h3>
                 <p>Moving is stressful enough. We handle the cleaning so you get your deposit back or start fresh in your new home.</p>
             </div>
-            <div class="svc-item fade-up">
-                <div class="svc-num">05</div>
+            <div class="svc-card fade-up">
+                <div class="svc-icon">&#127959;</div>
                 <h3>Post-Construction</h3>
                 <p>Renovation or new build? We remove dust, debris, and make your new space move-in ready.</p>
             </div>
-            <div class="svc-item fade-up">
-                <div class="svc-num">06</div>
+            <div class="svc-card fade-up">
+                <div class="svc-icon">&#128736;</div>
                 <h3>Custom Plans</h3>
                 <p>Need something specific? We create custom cleaning plans tailored to your exact needs and budget.</p>
             </div>
         </div>
     </section>
 
-    <!-- IMAGE BREAK — Residential -->
-    <section class="image-break" id="about">
+    <!-- IMAGE SECTION — About -->
+    <section class="img-section" id="about">
         <div class="img-side">
-            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1000" alt="Clean home">
+            <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=1000" alt="Clean home interior">
         </div>
-        <div class="content-side fade-left">
-            <div class="overline">
-                <div class="line"></div>
-                Why OKC Chooses Us
+        <div class="text-side fade-left">
+            <div class="overline" style="display:flex;align-items:center;gap:10px;margin-bottom:15px;">
+                <div style="width:30px;height:2px;background:var(--green-bright);"></div>
+                <span style="font-size:0.78rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green-bright);">Why OKC Chooses Us</span>
             </div>
             <h2>Not Just <em>Clean.</em><br>All Clean.</h2>
             <p>We're not a franchise. We're Oklahoma City locals who take pride in every home we clean. Our team is trained, background-checked, and committed to treating your home with the care it deserves.</p>
             <p>We use eco-friendly products, bring all our own equipment, and guarantee your satisfaction every single time.</p>
-            <div class="features">
-                <div class="feat">Background-checked team</div>
-                <div class="feat">Eco-friendly products</div>
-                <div class="feat">All equipment provided</div>
-                <div class="feat">Satisfaction guaranteed</div>
-            </div>
+            <ul class="feat-list">
+                <li>Background-checked team members</li>
+                <li>Eco-friendly cleaning products</li>
+                <li>All equipment provided</li>
+                <li>100% satisfaction guaranteed</li>
+            </ul>
         </div>
     </section>
 
-    <!-- IMAGE BREAK — Commercial (reversed) -->
-    <section class="image-break reversed">
+    <!-- IMAGE SECTION — Commercial (reversed) -->
+    <section class="img-section reversed">
         <div class="img-side">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000" alt="Commercial cleaning">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000" alt="Clean office space">
         </div>
-        <div class="content-side fade-right">
-            <div class="overline">
-                <div class="line"></div>
-                Commercial Services
+        <div class="text-side light fade-right">
+            <div class="overline" style="display:flex;align-items:center;gap:10px;margin-bottom:15px;">
+                <div style="width:30px;height:2px;background:var(--green-light);"></div>
+                <span style="font-size:0.78rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--green-light);">Commercial Services</span>
             </div>
             <h2>Keep Your <em>Business</em><br>Looking Its Best</h2>
             <p>A clean workplace isn't just about appearances — it's about health, productivity, and the impression you make on clients. We clean offices, retail spaces, medical facilities, and more.</p>
             <p>Flexible scheduling means we work around your business hours, not the other way around.</p>
-            <div class="features">
-                <div class="feat">Office buildings</div>
-                <div class="feat">Retail spaces</div>
-                <div class="feat">Medical facilities</div>
-                <div class="feat">Flexible scheduling</div>
-            </div>
+            <ul class="feat-list">
+                <li>Office buildings</li>
+                <li>Retail spaces</li>
+                <li>Medical facilities</li>
+                <li>Flexible scheduling</li>
+            </ul>
         </div>
     </section>
 
@@ -1063,42 +988,38 @@
         <div class="section-head center">
             <div class="overline">
                 <div class="line"></div>
-                Testimonials
+                <span>Testimonials</span>
             </div>
             <h2>What OKC <em>Says About Us</em></h2>
         </div>
         <div class="test-grid">
             <div class="test-card fade-up">
-                <div class="green-bar"></div>
                 <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote>"All Cleaning OKC has been cleaning our home for over a year now. They're always on time, thorough, and friendly. My house has never looked better. I recommend them to everyone."</blockquote>
+                <blockquote>"All Cleaning OKC has been cleaning our home for over a year now. They're always on time, thorough, and friendly. My house has never looked better."</blockquote>
                 <div class="test-author">
                     Sarah M.
                     <span>Oklahoma City Homeowner</span>
                 </div>
             </div>
             <div class="test-card fade-up">
-                <div class="green-bar"></div>
                 <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote>"We hired All Cleaning for our office and the difference is incredible. Our employees notice it, our clients notice it. Professional, reliable, and worth every penny."</blockquote>
+                <blockquote>"We hired All Cleaning for our office and the difference is incredible. Our employees notice it, our clients notice it. Professional and reliable."</blockquote>
                 <div class="test-author">
                     Jason T.
                     <span>OKC Business Owner</span>
                 </div>
             </div>
             <div class="test-card fade-up">
-                <div class="green-bar"></div>
                 <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote>"We used their move-out cleaning service and got our full deposit back. The apartment looked better than when we moved in. Absolutely incredible work."</blockquote>
+                <blockquote>"We used their move-out cleaning service and got our full deposit back. The apartment looked better than when we moved in. Absolutely incredible."</blockquote>
                 <div class="test-author">
-                    Amanda & David R.
+                    Amanda R.
                     <span>Edmond, OK</span>
                 </div>
             </div>
             <div class="test-card fade-up">
-                <div class="green-bar"></div>
                 <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                <blockquote>"After our kitchen renovation, there was dust everywhere. All Cleaning came in and made everything spotless. They even cleaned spots I didn't know existed. Highly recommend."</blockquote>
+                <blockquote>"After our renovation, there was dust everywhere. All Cleaning came in and made everything spotless. They even cleaned spots I didn't know existed."</blockquote>
                 <div class="test-author">
                     Michelle K.
                     <span>Norman, OK</span>
@@ -1112,11 +1033,11 @@
         <div class="section-head center">
             <div class="overline">
                 <div class="line"></div>
-                How It Works
+                <span>How It Works</span>
             </div>
             <h2>Getting Started <em>Is Easy</em></h2>
         </div>
-        <div class="process-grid">
+        <div class="process-steps">
             <div class="proc-step fade-up">
                 <div class="circle"><span>1</span></div>
                 <h3>Request</h3>
@@ -1142,17 +1063,17 @@
 
     <!-- GALLERY -->
     <section class="gallery">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800" alt="Clean living room">
-        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500" alt="Clean kitchen">
-        <img src="https://images.unsplash.com/photo-1527515637462-cff94eeb4054?w=500" alt="Clean bathroom">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800" alt="Clean living room">
+        <img src="https://images.unsplash.com/photo-1527515637462-cff94eeb4054?w=500" alt="Clean kitchen">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500" alt="Modern home">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=500" alt="Clean bathroom">
         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500" alt="Clean office">
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500" alt="Professional cleaning">
     </section>
 
     <!-- AREAS -->
     <section class="areas" id="areas">
         <div class="areas-bg">
-            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920" alt="Oklahoma City">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920" alt="Oklahoma City skyline">
         </div>
         <div class="areas-content">
             <h2>Serving <em>All of OKC</em></h2>
@@ -1186,7 +1107,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="logo-foot">All Cleaning <em>OKC</em></div>
+        <div class="logo-foot">All Cleaning <span>OKC</span></div>
         <p>Professional Cleaning Services — Oklahoma City, OK</p>
         <p><a href="mailto:info@allcleaningokc.com">info@allcleaningokc.com</a></p>
     </footer>
