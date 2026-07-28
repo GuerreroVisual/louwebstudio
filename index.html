@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23080808'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia,serif' font-size='14' font-weight='400' fill='%23e8a838'%3ELOU%3C/text%3E%3C/svg%3E">
     <style>
         :root {
             --bg: #080808;
@@ -81,10 +82,7 @@
             transition: opacity .8s cubic-bezier(.65,0,.35,1), visibility .8s;
         }
 
-        .preloader.done {
-            opacity: 0;
-            visibility: hidden;
-        }
+        .preloader.done { opacity: 0; visibility: hidden; }
 
         .preloader-logo {
             font-family: 'Instrument Serif', serif;
@@ -100,9 +98,7 @@
             transform: translateY(100%);
         }
 
-        @keyframes preloaderChar {
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes preloaderChar { to { opacity: 1; transform: translateY(0); } }
 
         .preloader-bar {
             width: 120px;
@@ -124,9 +120,7 @@
             animation: preloaderProgress 1.8s cubic-bezier(.65,0,.35,1) forwards;
         }
 
-        @keyframes preloaderProgress {
-            to { width: 100%; }
-        }
+        @keyframes preloaderProgress { to { width: 100%; } }
 
         /* ORBS */
         .orb {
@@ -212,10 +206,7 @@
             text-decoration: none;
         }
 
-        .logo span {
-            font-style: italic;
-            color: var(--accent);
-        }
+        .logo span { font-style: italic; color: var(--accent); }
 
         .nav-right {
             display: flex;
@@ -223,11 +214,7 @@
             gap: 40px;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 36px;
-            list-style: none;
-        }
+        .nav-links { display: flex; gap: 36px; list-style: none; }
 
         .nav-links a {
             font-family: 'DM Mono', monospace;
@@ -252,13 +239,8 @@
             transition: width .4s cubic-bezier(.65,0,.35,1);
         }
 
-        .nav-links a:hover {
-            color: var(--text);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover { color: var(--text); }
+        .nav-links a:hover::after { width: 100%; }
 
         .btn-nav-cta {
             background: var(--accent);
@@ -317,10 +299,7 @@
             transition: all .4s cubic-bezier(.65,0,.35,1);
         }
 
-        .mobile-menu.open {
-            opacity: 1;
-            visibility: visible;
-        }
+        .mobile-menu.open { opacity: 1; visibility: visible; }
 
         .mobile-menu a {
             font-family: 'Instrument Serif', serif;
@@ -343,6 +322,36 @@
             overflow: hidden;
         }
 
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+        }
+
+        .hero-bg-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.6) 50%, rgba(8,8,8,0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-bg-gradient {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            background: linear-gradient(transparent, var(--bg));
+            z-index: 2;
+        }
+
         .hero-grid-bg {
             position: absolute;
             inset: 0;
@@ -354,13 +363,14 @@
             -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
             opacity: 0;
             animation: gridFade 1.5s ease 1.5s forwards;
+            z-index: 3;
         }
 
         @keyframes gridFade { to { opacity: 1; } }
 
         .hero-content {
             position: relative;
-            z-index: 2;
+            z-index: 4;
             max-width: 900px;
         }
 
@@ -391,10 +401,7 @@
             line-height: .95;
         }
 
-        .hero h1 .line-block {
-            display: block;
-            overflow: hidden;
-        }
+        .hero h1 .line-block { display: block; overflow: hidden; }
 
         .hero h1 .line-inner {
             display: block;
@@ -406,10 +413,7 @@
 
         @keyframes lineReveal { to { transform: translateY(0); } }
 
-        .hero h1 em {
-            font-style: italic;
-            color: var(--accent);
-        }
+        .hero h1 em { font-style: italic; color: var(--accent); }
 
         .typed-word {
             color: var(--accent);
@@ -567,7 +571,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* NICHES */
+        /* NICHES — photo-based */
         .niches { padding: 120px 0; }
 
         .section-label {
@@ -596,52 +600,78 @@
             max-width: 700px;
         }
 
-        .section-title em {
-            font-style: italic;
-            color: var(--accent);
-        }
+        .section-title em { font-style: italic; color: var(--accent); }
 
         .niches-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2px;
-            background: var(--border);
-            border: 1px solid var(--border);
+            grid-template-rows: repeat(3, 220px);
+            gap: 3px;
         }
 
         .niche-card {
-            background: var(--bg);
-            padding: 36px 28px;
-            text-align: center;
-            transition: all .4s cubic-bezier(.65,0,.35,1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border-radius: 2px;
         }
 
-        .niche-card:hover {
-            background: var(--surface);
+        .niche-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s cubic-bezier(.65,0,.35,1), filter .4s;
+            filter: brightness(.45) saturate(.8);
         }
 
-        .niche-card:hover .niche-icon {
-            transform: scale(1.15);
+        .niche-card:hover img {
+            transform: scale(1.08);
+            filter: brightness(.55) saturate(1);
         }
 
-        .niche-icon {
-            font-size: 2.2rem;
-            margin-bottom: 16px;
-            display: block;
-            transition: transform .4s cubic-bezier(.65,0,.35,1);
+        .niche-card .niche-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 20%, rgba(8,8,8,.85));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 24px 20px;
+            z-index: 1;
         }
 
-        .niche-card h3 {
+        .niche-card .niche-overlay h3 {
             font-family: 'DM Sans', sans-serif;
-            font-size: .95rem;
+            font-size: 1rem;
             font-weight: 700;
-            margin-bottom: 6px;
+            color: var(--text);
+            margin-bottom: 3px;
+            transition: color .3s;
         }
 
-        .niche-card p {
-            font-size: .78rem;
+        .niche-card:hover .niche-overlay h3 { color: var(--accent); }
+
+        .niche-card .niche-overlay p {
+            font-size: .72rem;
             color: var(--text-muted);
+            font-family: 'DM Mono', monospace;
+            letter-spacing: .04em;
         }
+
+        .niche-card .niche-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform .4s cubic-bezier(.65,0,.35,1);
+            transform-origin: left;
+            z-index: 2;
+        }
+
+        .niche-card:hover .niche-line { transform: scaleX(1); }
 
         /* SERVICES */
         .services {
@@ -680,10 +710,7 @@
         }
 
         .service-block:hover::before { transform: scaleX(1); }
-
-        .service-block:hover {
-            background: var(--surface);
-        }
+        .service-block:hover { background: var(--surface); }
 
         .service-num {
             font-family: 'DM Mono', monospace;
@@ -775,9 +802,7 @@
             transition: transform .8s cubic-bezier(.65,0,.35,1);
         }
 
-        .portfolio-card:hover .portfolio-preview img {
-            transform: scale(1.06);
-        }
+        .portfolio-card:hover .portfolio-preview img { transform: scale(1.06); }
 
         .portfolio-preview .overlay {
             position: absolute;
@@ -870,15 +895,9 @@
             margin-bottom: 16px;
         }
 
-        .how-left h2 em {
-            font-style: italic;
-            color: var(--accent);
-        }
+        .how-left h2 em { font-style: italic; color: var(--accent); }
 
-        .how-left p {
-            color: var(--text-muted);
-            font-size: .92rem;
-        }
+        .how-left p { color: var(--text-muted); font-size: .92rem; }
 
         .steps { display: flex; flex-direction: column; }
 
@@ -911,16 +930,10 @@
             margin-bottom: 6px;
         }
 
-        .step p {
-            font-size: .85rem;
-            color: var(--text-muted);
-        }
+        .step p { font-size: .85rem; color: var(--text-muted); }
 
         /* PRICING */
-        .pricing {
-            padding: 120px 0;
-            position: relative;
-        }
+        .pricing { padding: 120px 0; position: relative; }
 
         .pricing::before {
             content: '';
@@ -934,11 +947,7 @@
             pointer-events: none;
         }
 
-        .pricing-header {
-            text-align: center;
-            margin-bottom: 56px;
-        }
-
+        .pricing-header { text-align: center; margin-bottom: 56px; }
         .pricing-header .section-label { justify-content: center; }
         .pricing-header .section-label::before { display: none; }
 
@@ -968,7 +977,6 @@
         }
 
         .price-card:hover { background: var(--surface); }
-
         .price-card.featured { background: var(--surface); }
 
         .price-card.featured::before {
@@ -1024,10 +1032,7 @@
             color: var(--text-muted);
         }
 
-        .plan-desc {
-            font-size: .82rem;
-            color: var(--text-muted);
-        }
+        .plan-desc { font-size: .82rem; color: var(--text-muted); }
 
         .plan-features {
             list-style: none;
@@ -1054,15 +1059,8 @@
             flex-shrink: 0;
         }
 
-        .plan-features li.disabled {
-            color: var(--text-muted);
-            opacity: .4;
-        }
-
-        .plan-features li.disabled .check {
-            color: var(--text-muted);
-            opacity: .4;
-        }
+        .plan-features li.disabled { color: var(--text-muted); opacity: .4; }
+        .plan-features li.disabled .check { color: var(--text-muted); opacity: .4; }
 
         .btn-plan {
             width: 100%;
@@ -1081,10 +1079,7 @@
             border: none;
         }
 
-        .btn-plan.primary {
-            background: var(--accent);
-            color: var(--bg);
-        }
+        .btn-plan.primary { background: var(--accent); color: var(--bg); }
 
         .btn-plan.primary:hover {
             background: var(--accent-light);
@@ -1104,10 +1099,7 @@
         }
 
         /* FAQ */
-        .faq {
-            padding: 120px 0;
-            border-top: 1px solid var(--border);
-        }
+        .faq { padding: 120px 0; border-top: 1px solid var(--border); }
 
         .faq-grid {
             display: grid;
@@ -1121,20 +1113,11 @@
             margin-bottom: 12px;
         }
 
-        .faq-left h2 em {
-            font-style: italic;
-            color: var(--accent);
-        }
+        .faq-left h2 em { font-style: italic; color: var(--accent); }
 
-        .faq-left p {
-            color: var(--text-muted);
-            font-size: .92rem;
-        }
+        .faq-left p { color: var(--text-muted); font-size: .92rem; }
 
-        .faq-item {
-            border-bottom: 1px solid var(--border);
-        }
-
+        .faq-item { border-bottom: 1px solid var(--border); }
         .faq-item:first-child { border-top: 1px solid var(--border); }
 
         .faq-question {
@@ -1218,11 +1201,7 @@
             gap: 12px;
         }
 
-        .cta-eyebrow .line {
-            width: 32px;
-            height: 1px;
-            background: var(--accent);
-        }
+        .cta-eyebrow .line { width: 32px; height: 1px; background: var(--accent); }
 
         .cta h2 {
             font-size: clamp(2.5rem, 6vw, 5rem);
@@ -1231,10 +1210,7 @@
             line-height: .95;
         }
 
-        .cta h2 em {
-            font-style: italic;
-            color: var(--accent);
-        }
+        .cta h2 em { font-style: italic; color: var(--accent); }
 
         .cta > .container > div > p {
             color: var(--text-muted);
@@ -1298,10 +1274,7 @@
             margin-bottom: 18px;
         }
 
-        .footer-links {
-            list-style: none;
-        }
-
+        .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 10px; }
 
         .footer-links a {
@@ -1328,10 +1301,7 @@
             letter-spacing: .04em;
         }
 
-        .footer-bottom-links {
-            display: flex;
-            gap: 20px;
-        }
+        .footer-bottom-links { display: flex; gap: 20px; }
 
         .footer-bottom-links a {
             font-family: 'DM Mono', monospace;
@@ -1365,10 +1335,7 @@
             transition: all .4s cubic-bezier(.65,0,.35,1);
         }
 
-        .back-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
+        .back-top.show { opacity: 1; visibility: visible; }
 
         .back-top:hover {
             border-color: var(--accent);
@@ -1383,14 +1350,11 @@
             transition: opacity .8s cubic-bezier(.65,0,.35,1), transform .8s cubic-bezier(.65,0,.35,1);
         }
 
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
-        /* MEDIA QUERIES */
+        /* RESPONSIVE */
         @media (max-width: 1000px) {
-            .niches-grid { grid-template-columns: repeat(2, 1fr); }
+            .niches-grid { grid-template-columns: repeat(3, 1fr); }
             .pricing-grid, .services-grid { grid-template-columns: 1fr; }
             .portfolio-card { min-width: 360px; }
         }
@@ -1403,14 +1367,14 @@
             .hero h1 { font-size: clamp(2.8rem, 10vw, 4rem); }
             .hero-stats { gap: 24px; flex-wrap: wrap; }
             .how-grid, .faq-grid { grid-template-columns: 1fr; gap: 40px; }
-            .niches-grid { grid-template-columns: 1fr 1fr; }
+            .niches-grid { grid-template-columns: repeat(2, 1fr); }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .portfolio-header { flex-direction: column; align-items: flex-start; gap: 12px; }
             .footer-bottom { flex-direction: column; gap: 14px; text-align: center; }
         }
 
         @media (max-width: 500px) {
-            .niches-grid { grid-template-columns: 1fr; }
+            .niches-grid { grid-template-columns: 1fr 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
             .portfolio-card { min-width: 290px; }
             .portfolio-preview { height: 220px; }
@@ -1463,6 +1427,11 @@
 
     <!-- HERO -->
     <section class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1920&q=80" alt="Web design workspace" loading="eager">
+        </div>
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-bg-gradient"></div>
         <div class="hero-grid-bg"></div>
         <div class="container">
             <div class="hero-content">
@@ -1476,7 +1445,7 @@
                 </h1>
                 <p class="hero-desc">We build, host, and maintain your website so you can focus on your business. No templates. No DIY. Just results that convert visitors into customers.</p>
                 <div class="hero-actions">
-                    <a href="#pricing" class="btn-primary">See Plans <span>↓</span></a>
+                    <a href="#pricing" class="btn-primary">See Plans <span>&#8595;</span></a>
                     <a href="#work" class="btn-ghost">View Our Work</a>
                 </div>
                 <div class="hero-stats">
@@ -1519,71 +1488,107 @@
         </div>
     </div>
 
-    <!-- NICHES — 12 items -->
+    <!-- NICHES — 12 photos -->
     <section class="niches" id="niches">
         <div class="container">
             <p class="section-label reveal">Who We Serve</p>
             <h2 class="section-title reveal">Built for <em>local businesses</em><br>that want to grow</h2>
             <div class="niches-grid">
                 <div class="niche-card reveal">
-                    <span class="niche-icon">🍽️</span>
-                    <h3>Restaurants</h3>
-                    <p>Menus, reservations, reviews</p>
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Restaurant" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Restaurants</h3>
+                        <p>Menus, reservations, reviews</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
                 <div class="niche-card reveal">
-                    <span class="niche-icon">✂️</span>
-                    <h3>Barber Shops</h3>
-                    <p>Booking, services, gallery</p>
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80" alt="Barber Shop" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Barber Shops</h3>
+                        <p>Booking, services, gallery</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
                 <div class="niche-card reveal">
-                    <span class="niche-icon">🦷</span>
-                    <h3>Dental Clinics</h3>
-                    <p>Appointments, insurance, team</p>
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80" alt="Dental Clinic" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Dental Clinics</h3>
+                        <p>Appointments, insurance, team</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
                 <div class="niche-card reveal">
-                    <span class="niche-icon">📸</span>
-                    <h3>Photography</h3>
-                    <p>Portfolios, galleries, booking</p>
+                    <img src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=600&q=80" alt="Photography" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Photography</h3>
+                        <p>Portfolios, galleries, booking</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
                 <div class="niche-card reveal">
-                    <span class="niche-icon">🧹</span>
-                    <h3>Cleaning Services</h3>
-                    <p>Services, areas, quotes</p>
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" alt="Cleaning Services" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Cleaning Services</h3>
+                        <p>Services, areas, quotes</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
                 <div class="niche-card reveal">
-                    <span class="niche-icon">🎨</span>
-                    <h3>Tattoo Studios</h3>
-                    <p>Gallery, artists, booking</p>
+                    <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=600&q=80" alt="Tattoo Studio" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Tattoo Studios</h3>
+                        <p>Gallery, artists, booking</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
                 <div class="niche-card reveal">
-                    <span class="niche-icon">🚗</span>
-                    <h3>Auto Detailing</h3>
-                    <p>Services, before/after, booking</p>
+                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80" alt="Auto Detailing" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Auto Detailing</h3>
+                        <p>Services, before/after, booking</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
                 <div class="niche-card reveal">
-                    <span class="niche-icon">🏥</span>
-                    <h3>Healthcare</h3>
-                    <p>Services, reviews, appointments</p>
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Healthcare" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Healthcare</h3>
+                        <p>Services, reviews, appointments</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
                 <div class="niche-card reveal">
-                    <span class="niche-icon">⚖️</span>
-                    <h3>Law Firms</h3>
-                    <p>Practice areas, consultations</p>
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=80" alt="Law Firm" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Law Firms</h3>
+                        <p>Practice areas, consultations</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
                 <div class="niche-card reveal">
-                    <span class="niche-icon">🏠</span>
-                    <h3>Real Estate</h3>
-                    <p>Listings, agents, areas served</p>
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Real Estate" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Real Estate</h3>
+                        <p>Listings, agents, areas served</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
                 <div class="niche-card reveal">
-                    <span class="niche-icon">💪</span>
-                    <h3>Gyms & Fitness</h3>
-                    <p>Classes, trainers, memberships</p>
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="Gym" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Gyms & Fitness</h3>
+                        <p>Classes, trainers, memberships</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
                 <div class="niche-card reveal">
-                    <span class="niche-icon">🔧</span>
-                    <h3>Home Services</h3>
-                    <p>Plumbing, HVAC, roofing</p>
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Home Services" loading="lazy">
+                    <div class="niche-overlay">
+                        <h3>Home Services</h3>
+                        <p>Plumbing, HVAC, roofing</p>
+                    </div>
+                    <div class="niche-line"></div>
                 </div>
             </div>
         </div>
@@ -1627,8 +1632,6 @@
         </div>
         <div class="container">
             <div class="portfolio-scroll" id="portfolioScroll">
-
-                <!-- 1. Total Cleaning Services -->
                 <a href="demos/demo-totalcleaning.html" class="portfolio-card" target="_blank">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Total Cleaning Services" loading="lazy">
@@ -1638,12 +1641,10 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>Total Cleaning Services</h3>
-                        <p>27 years of professional cleaning. Dark blue + gold design with trust indicators, service showcase, and Google Maps integration.</p>
-                        <span class="portfolio-link">View Live Demo <span class="arrow">→</span></span>
+                        <p>27 years of professional cleaning. Dark blue + gold design with trust indicators and service showcase.</p>
+                        <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-
-                <!-- 2. Ost Photo -->
                 <a href="demos/demo-ostphoto.html" class="portfolio-card" target="_blank">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Ost Photo" loading="lazy">
@@ -1653,12 +1654,10 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>Mer De Louve Photography</h3>
-                        <p>Award-winning photographer with 250+ awards. Full-screen black gallery with gold accents and masonry portfolio.</p>
-                        <span class="portfolio-link">View Live Demo <span class="arrow">→</span></span>
+                        <p>Award-winning photographer. Full-screen black gallery with gold accents and masonry portfolio.</p>
+                        <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-
-                <!-- 3. Pinnacle Tattoo -->
                 <a href="demos/demo-pinnacletattoo.html" class="portfolio-card" target="_blank">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=800&q=80" alt="Pinnacle Tattoo" loading="lazy">
@@ -1668,12 +1667,10 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>Pinnacle Tattoo</h3>
-                        <p>Custom tattoo studio. Bold black + red design with scroll marquee, artist profiles, and full gallery showcase.</p>
-                        <span class="portfolio-link">View Live Demo <span class="arrow">→</span></span>
+                        <p>Custom tattoo studio. Bold black + red design with scroll marquee and artist profiles.</p>
+                        <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-
-                <!-- 4. Coastal Bend Chiropractic -->
                 <a href="demos/demo-coastalbend.html" class="portfolio-card" target="_blank">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Coastal Bend Chiropractic" loading="lazy">
@@ -1683,12 +1680,10 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>Coastal Bend Chiropractic</h3>
-                        <p>Family chiropractic practice. Teal + warm tones with patient reviews, condition showcase, and treatment process.</p>
-                        <span class="portfolio-link">View Live Demo <span class="arrow">→</span></span>
+                        <p>Family chiropractic. Teal + warm tones with patient reviews and treatment process.</p>
+                        <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-
-                <!-- 5. LG Mobile Detailing -->
                 <a href="demos/demo-lgdetailing.html" class="portfolio-card" target="_blank">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80" alt="LG Mobile Detailing" loading="lazy">
@@ -1698,12 +1693,10 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>LG Mobile Detailing</h3>
-                        <p>13 years of premium mobile detailing. Black + orange industrial design with diagonal service layout and before/after showcase.</p>
-                        <span class="portfolio-link">View Live Demo <span class="arrow">→</span></span>
+                        <p>13 years of premium detailing. Black + orange industrial design with diagonal service layout.</p>
+                        <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-
-                <!-- 6. All Cleaning OKC -->
                 <a href="demos/demo-allcleaningokc.html" class="portfolio-card" target="_blank">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80" alt="All Cleaning OKC" loading="lazy">
@@ -1713,12 +1706,10 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>All Cleaning OKC</h3>
-                        <p>Premium cleaning company. Dark green + gold editorial design with split image sections, service areas map, and 4 testimonials.</p>
-                        <span class="portfolio-link">View Live Demo <span class="arrow">→</span></span>
+                        <p>Premium cleaning. Dark green + gold editorial with split image sections and 4 testimonials.</p>
+                        <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-
-                <!-- 7. Your Business? -->
                 <a href="#contact" class="portfolio-card">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Your business" loading="lazy">
@@ -1727,11 +1718,10 @@
                     </div>
                     <div class="portfolio-info">
                         <h3>Your Business?</h3>
-                        <p>Tell us about your business and we'll have a free mockup ready in 48 hours. No strings attached.</p>
-                        <span class="portfolio-link">Get Started <span class="arrow">→</span></span>
+                        <p>Tell us about your business and we'll have a free mockup ready in 48 hours.</p>
+                        <span class="portfolio-link">Get Started <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-
             </div>
         </div>
     </section>
@@ -1772,7 +1762,7 @@
         </div>
     </section>
 
-    <!-- PRICING — Updated to $99/$199/$399 -->
+    <!-- PRICING -->
     <section class="pricing" id="pricing">
         <div class="container">
             <div class="pricing-header reveal">
@@ -1781,8 +1771,6 @@
                 <p>All plans include hosting, SSL, and a free domain. Cancel anytime after 3 months.</p>
             </div>
             <div class="pricing-grid">
-
-                <!-- STARTER — $99 -->
                 <div class="price-card reveal">
                     <div class="price-top">
                         <div class="plan-name">Starter</div>
@@ -1794,22 +1782,20 @@
                         <p class="plan-desc">Get online and look professional.</p>
                     </div>
                     <ul class="plan-features">
-                        <li><span class="check">✓</span> Up to 3 pages</li>
-                        <li><span class="check">✓</span> Mobile responsive design</li>
-                        <li><span class="check">✓</span> Custom domain included</li>
-                        <li><span class="check">✓</span> Free SSL certificate</li>
-                        <li><span class="check">✓</span> Managed hosting</li>
-                        <li class="disabled"><span class="check">—</span> Content changes</li>
-                        <li class="disabled"><span class="check">—</span> SEO optimization</li>
-                        <li class="disabled"><span class="check">—</span> Online booking</li>
+                        <li><span class="check">&#10003;</span> Up to 3 pages</li>
+                        <li><span class="check">&#10003;</span> Mobile responsive design</li>
+                        <li><span class="check">&#10003;</span> Custom domain included</li>
+                        <li><span class="check">&#10003;</span> Free SSL certificate</li>
+                        <li><span class="check">&#10003;</span> Managed hosting</li>
+                        <li class="disabled"><span class="check">&#8212;</span> Content changes</li>
+                        <li class="disabled"><span class="check">&#8212;</span> SEO optimization</li>
+                        <li class="disabled"><span class="check">&#8212;</span> Online booking</li>
                     </ul>
                     <a href="#contact" class="btn-plan outline">Get Started</a>
                 </div>
-
-                <!-- GROWTH — $199 (featured) -->
                 <div class="price-card featured reveal">
                     <div class="price-top">
-                        <div class="plan-name">Growth — Most Popular</div>
+                        <div class="plan-name">Growth &#8212; Most Popular</div>
                         <div class="plan-price">
                             <span class="dollar">$</span>
                             <span class="amount">199</span>
@@ -1818,20 +1804,18 @@
                         <p class="plan-desc">Everything your business needs to grow.</p>
                     </div>
                     <ul class="plan-features">
-                        <li><span class="check">✓</span> Up to 7 pages</li>
-                        <li><span class="check">✓</span> Semi-custom design</li>
-                        <li><span class="check">✓</span> Custom domain included</li>
-                        <li><span class="check">✓</span> Free SSL certificate</li>
-                        <li><span class="check">✓</span> Managed hosting</li>
-                        <li><span class="check">✓</span> 3 content changes / month</li>
-                        <li><span class="check">✓</span> SEO optimization</li>
-                        <li><span class="check">✓</span> Google Business setup</li>
-                        <li><span class="check">✓</span> Online booking integration</li>
+                        <li><span class="check">&#10003;</span> Up to 7 pages</li>
+                        <li><span class="check">&#10003;</span> Semi-custom design</li>
+                        <li><span class="check">&#10003;</span> Custom domain included</li>
+                        <li><span class="check">&#10003;</span> Free SSL certificate</li>
+                        <li><span class="check">&#10003;</span> Managed hosting</li>
+                        <li><span class="check">&#10003;</span> 3 content changes / month</li>
+                        <li><span class="check">&#10003;</span> SEO optimization</li>
+                        <li><span class="check">&#10003;</span> Google Business setup</li>
+                        <li><span class="check">&#10003;</span> Online booking integration</li>
                     </ul>
                     <a href="#contact" class="btn-plan primary">Get Started</a>
                 </div>
-
-                <!-- PRO — $399 -->
                 <div class="price-card reveal">
                     <div class="price-top">
                         <div class="plan-name">Pro</div>
@@ -1843,19 +1827,18 @@
                         <p class="plan-desc">Full custom. Unlimited support.</p>
                     </div>
                     <ul class="plan-features">
-                        <li><span class="check">✓</span> 10+ pages</li>
-                        <li><span class="check">✓</span> Fully custom design</li>
-                        <li><span class="check">✓</span> Custom domain included</li>
-                        <li><span class="check">✓</span> Free SSL certificate</li>
-                        <li><span class="check">✓</span> Managed hosting</li>
-                        <li><span class="check">✓</span> Unlimited content changes</li>
-                        <li><span class="check">✓</span> Advanced SEO</li>
-                        <li><span class="check">✓</span> Blog / content hub</li>
-                        <li><span class="check">✓</span> Priority support</li>
+                        <li><span class="check">&#10003;</span> 10+ pages</li>
+                        <li><span class="check">&#10003;</span> Fully custom design</li>
+                        <li><span class="check">&#10003;</span> Custom domain included</li>
+                        <li><span class="check">&#10003;</span> Free SSL certificate</li>
+                        <li><span class="check">&#10003;</span> Managed hosting</li>
+                        <li><span class="check">&#10003;</span> Unlimited content changes</li>
+                        <li><span class="check">&#10003;</span> Advanced SEO</li>
+                        <li><span class="check">&#10003;</span> Blog / content hub</li>
+                        <li><span class="check">&#10003;</span> Priority support</li>
                     </ul>
                     <a href="#contact" class="btn-plan outline">Get Started</a>
                 </div>
-
             </div>
         </div>
     </section>
@@ -1880,11 +1863,11 @@
                     </div>
                     <div class="faq-item reveal">
                         <button class="faq-question">How fast can my site go live?<span class="icon">+</span></button>
-                        <div class="faq-answer"><p>Most sites launch within 5–7 business days after we receive your content. Simple sites can go live in as little as 3 days.</p></div>
+                        <div class="faq-answer"><p>Most sites launch within 5-7 business days after we receive your content. Simple sites can go live in as little as 3 days.</p></div>
                     </div>
                     <div class="faq-item reveal">
                         <button class="faq-question">What if I need changes to my site?<span class="icon">+</span></button>
-                        <div class="faq-answer"><p>Depends on your plan. Growth gets 3 changes/month, Pro gets unlimited. Just send us a message and we handle it within 24–48 hours.</p></div>
+                        <div class="faq-answer"><p>Depends on your plan. Growth gets 3 changes/month, Pro gets unlimited. Just send us a message and we handle it within 24-48 hours.</p></div>
                     </div>
                     <div class="faq-item reveal">
                         <button class="faq-question">Is there a setup fee?<span class="icon">+</span></button>
@@ -1906,13 +1889,13 @@
                 <p class="cta-eyebrow"><span class="line"></span> Ready? <span class="line"></span></p>
                 <h2>Let's build<br>something <em>great.</em></h2>
                 <p>Tell us about your business. We'll get back to you within 24 hours with a free mockup — no strings attached.</p>
-                <a href="mailto:contact@louwebstudio.com" class="btn-primary">Get in Touch <span>→</span></a>
+                <a href="mailto:contact@louwebstudio.com" class="btn-primary">Get in Touch <span>&#8594;</span></a>
                 <p class="cta-email">or email us directly at <a href="mailto:contact@louwebstudio.com">contact@louwebstudio.com</a></p>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER — Updated to 2026 -->
+    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1940,7 +1923,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 LouWebStudio. All rights reserved.</p>
+                <p>&#169; 2026 LouWebStudio. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="mailto:contact@louwebstudio.com">Contact</a>
                 </div>
@@ -1948,7 +1931,7 @@
         </div>
     </footer>
 
-    <a href="#" class="back-top" id="backTop">↑</a>
+    <a href="#" class="back-top" id="backTop">&#8593;</a>
 
     <!-- SCRIPTS -->
     <script>
@@ -1965,7 +1948,7 @@
             setTimeout(() => document.getElementById('preloader').classList.add('done'), 2200);
         });
 
-        // TYPED EFFECT — Updated with real niches
+        // TYPED EFFECT
         const words = ['restaurants', 'barber shops', 'dental clinics', 'photography studios', 'cleaning services', 'tattoo shops', 'auto detailing', 'chiropractors', 'your business'];
         let wordIndex = 0;
         let charIndex = 0;
