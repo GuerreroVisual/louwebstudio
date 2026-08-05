@@ -571,7 +571,7 @@
             100% { transform: translateX(-50%); }
         }
 
-        /* NICHES — photo-based */
+        /* NICHES */
         .niches { padding: 120px 0; }
 
         .section-label {
@@ -734,11 +734,10 @@
             line-height: 1.7;
         }
 
-        /* PORTFOLIO */
+        /* PORTFOLIO — GRID */
         .portfolio {
             padding: 120px 0;
             border-top: 1px solid var(--border);
-            overflow: hidden;
         }
 
         .portfolio-header {
@@ -756,28 +755,17 @@
             color: var(--text-muted);
         }
 
-        .portfolio-scroll {
-            display: flex;
-            gap: 24px;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            padding-bottom: 20px;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            cursor: grab;
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
-        .portfolio-scroll::-webkit-scrollbar { display: none; }
-        .portfolio-scroll:active { cursor: grabbing; }
-
         .portfolio-card {
-            min-width: 420px;
-            scroll-snap-align: start;
             border: 1px solid var(--border);
             border-radius: 12px;
             overflow: hidden;
             transition: all .5s cubic-bezier(.65,0,.35,1);
-            flex-shrink: 0;
             text-decoration: none;
             color: var(--text);
             display: block;
@@ -1356,7 +1344,7 @@
         @media (max-width: 1000px) {
             .niches-grid { grid-template-columns: repeat(3, 1fr); }
             .pricing-grid, .services-grid { grid-template-columns: 1fr; }
-            .portfolio-card { min-width: 360px; }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 800px) {
@@ -1376,7 +1364,7 @@
         @media (max-width: 500px) {
             .niches-grid { grid-template-columns: 1fr 1fr; }
             .footer-grid { grid-template-columns: 1fr; }
-            .portfolio-card { min-width: 290px; }
+            .portfolio-grid { grid-template-columns: 1fr; }
             .portfolio-preview { height: 220px; }
             .hero-actions { flex-direction: column; align-items: flex-start; }
             .hero-stats { flex-direction: column; gap: 16px; }
@@ -1488,7 +1476,7 @@
         </div>
     </div>
 
-    <!-- NICHES — 12 photos -->
+    <!-- NICHES -->
     <section class="niches" id="niches">
         <div class="container">
             <p class="section-label reveal">Who We Serve</p>
@@ -1619,7 +1607,7 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO — 6 real demos -->
+    <!-- PORTFOLIO — 9 demos in grid -->
     <section class="portfolio" id="work">
         <div class="container">
             <div class="portfolio-header reveal">
@@ -1627,12 +1615,12 @@
                     <p class="section-label">Our Work</p>
                     <h2 class="section-title">Sites that <em>convert.</em></h2>
                 </div>
-                <div class="portfolio-count">06 Projects</div>
+                <div class="portfolio-count">09 Projects</div>
             </div>
-        </div>
-        <div class="container">
-            <div class="portfolio-scroll" id="portfolioScroll">
-                <a href="demos/demo-totalcleaning.html" class="portfolio-card" target="_blank">
+            <div class="portfolio-grid">
+
+                <!-- 1. Total Cleaning -->
+                <a href="demos/demo-totalcleaning.html" class="portfolio-card reveal" target="_blank">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80" alt="Total Cleaning Services" loading="lazy">
                         <div class="overlay"></div>
@@ -1645,9 +1633,11 @@
                         <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-                <a href="demos/demo-ostphoto.html" class="portfolio-card" target="_blank">
+
+                <!-- 2. Ost Photo -->
+                <a href="demos/demo-ostphoto.html" class="portfolio-card reveal" target="_blank">
                     <div class="portfolio-preview">
-                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Ost Photo" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Mer De Louve Photography" loading="lazy">
                         <div class="overlay"></div>
                         <div class="tag">Photography</div>
                         <div class="location">Plano, TX</div>
@@ -1658,7 +1648,9 @@
                         <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-                <a href="demos/demo-pinnacletattoo.html" class="portfolio-card" target="_blank">
+
+                <!-- 3. Pinnacle Tattoo -->
+                <a href="demos/demo-pinnacletattoo.html" class="portfolio-card reveal" target="_blank">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=800&q=80" alt="Pinnacle Tattoo" loading="lazy">
                         <div class="overlay"></div>
@@ -1671,7 +1663,9 @@
                         <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-                <a href="demos/demo-coastalbend.html" class="portfolio-card" target="_blank">
+
+                <!-- 4. Coastal Bend -->
+                <a href="demos/demo-coastalbend.html" class="portfolio-card reveal" target="_blank">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80" alt="Coastal Bend Chiropractic" loading="lazy">
                         <div class="overlay"></div>
@@ -1684,7 +1678,9 @@
                         <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-                <a href="demos/demo-lgdetailing.html" class="portfolio-card" target="_blank">
+
+                <!-- 5. LG Detailing -->
+                <a href="demos/demo-lgdetailing.html" class="portfolio-card reveal" target="_blank">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80" alt="LG Mobile Detailing" loading="lazy">
                         <div class="overlay"></div>
@@ -1697,7 +1693,9 @@
                         <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-                <a href="demos/demo-allcleaningokc.html" class="portfolio-card" target="_blank">
+
+                <!-- 6. All Cleaning OKC -->
+                <a href="demos/demo-allcleaningokc.html" class="portfolio-card reveal" target="_blank">
                     <div class="portfolio-preview">
                         <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80" alt="All Cleaning OKC" loading="lazy">
                         <div class="overlay"></div>
@@ -1710,18 +1708,52 @@
                         <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
-                <a href="#contact" class="portfolio-card">
+
+                <!-- 7. Barber Shop (NEW) -->
+                <a href="demos/barber.html" class="portfolio-card reveal" target="_blank">
                     <div class="portfolio-preview">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Your business" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80" alt="Barber Shop" loading="lazy">
                         <div class="overlay"></div>
-                        <div class="tag">Next?</div>
+                        <div class="tag">Barber</div>
+                        <div class="location">Dallas, TX</div>
                     </div>
                     <div class="portfolio-info">
-                        <h3>Your Business?</h3>
-                        <p>Tell us about your business and we'll have a free mockup ready in 48 hours.</p>
-                        <span class="portfolio-link">Get Started <span class="arrow">&#8594;</span></span>
+                        <h3>Classic Barber Shop</h3>
+                        <p>Premium barbershop experience. Clean design with service menu, gallery, and booking integration.</p>
+                        <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
                     </div>
                 </a>
+
+                <!-- 8. Dental (NEW) -->
+                <a href="demos/dental.html" class="portfolio-card reveal" target="_blank">
+                    <div class="portfolio-preview">
+                        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80" alt="Dental Clinic" loading="lazy">
+                        <div class="overlay"></div>
+                        <div class="tag">Dental</div>
+                        <div class="location">Arlington, TX</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Modern Dental Clinic</h3>
+                        <p>Family dental practice. Warm professional design with services, team profiles, and appointment booking.</p>
+                        <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
+                    </div>
+                </a>
+
+                <!-- 9. Restaurant (NEW) -->
+                <a href="demos/resto.html" class="portfolio-card reveal" target="_blank">
+                    <div class="portfolio-preview">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="Restaurant" loading="lazy">
+                        <div class="overlay"></div>
+                        <div class="tag">Restaurant</div>
+                        <div class="location">Houston, TX</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Fine Dining Restaurant</h3>
+                        <p>Elegant restaurant website. Dark theme with menu showcase, reservations, and photo gallery.</p>
+                        <span class="portfolio-link">View Live Demo <span class="arrow">&#8594;</span></span>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
@@ -2030,24 +2062,6 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
-
-        // PORTFOLIO DRAG SCROLL
-        const scrollContainer = document.getElementById('portfolioScroll');
-        let isDown = false, startX, scrollLeft;
-        if (scrollContainer) {
-            scrollContainer.addEventListener('mousedown', (e) => {
-                isDown = true;
-                startX = e.pageX - scrollContainer.offsetLeft;
-                scrollLeft = scrollContainer.scrollLeft;
-            });
-            scrollContainer.addEventListener('mouseleave', () => isDown = false);
-            scrollContainer.addEventListener('mouseup', () => isDown = false);
-            scrollContainer.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                scrollContainer.scrollLeft = scrollLeft - (e.pageX - scrollContainer.offsetLeft - startX) * 2;
-            });
-        }
     </script>
 
 </body>
