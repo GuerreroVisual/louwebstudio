@@ -19,6 +19,7 @@
             --cream: #e8e0d0;
             --red: #c0392b;
             --red-dark: #96281b;
+            --gold: #d4a843;
         }
 
         body {
@@ -55,7 +56,9 @@
             color: var(--white);
         }
 
-        .logo span { color: var(--red); }
+        .logo span {
+            color: var(--red);
+        }
 
         .nav-links a {
             color: var(--gray-light);
@@ -68,7 +71,14 @@
             transition: color 0.3s;
         }
 
-        .nav-links a:hover { color: var(--red); }
+        .nav-links a:hover {
+            color: var(--red);
+        }
+
+        .nav-phone {
+            color: var(--red) !important;
+            font-weight: 700 !important;
+        }
 
         /* HERO */
         .hero {
@@ -77,8 +87,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.9) 100%),
-                        url('https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=1920') center/cover;
+            background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.85) 100%),
+                        url('https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1920') center/cover;
             position: relative;
         }
 
@@ -92,9 +102,17 @@
             background: linear-gradient(transparent, var(--black));
         }
 
-        .hero-content { position: relative; z-index: 1; }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
 
-        .hero h1 { font-size: 5rem; line-height: 1; margin-bottom: 15px; }
+        .hero h1 {
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
         .hero h1 .red { color: var(--red); }
 
         .hero .tagline {
@@ -127,11 +145,31 @@
             transition: all 0.3s ease;
         }
 
-        .btn:hover { background: var(--red); color: var(--white); }
-        .btn-filled { background: var(--red); color: var(--white); }
-        .btn-filled:hover { background: var(--red-dark); border-color: var(--red-dark); }
-        .btn-outline { border-color: var(--gray); color: var(--gray-light); }
-        .btn-outline:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+        .btn:hover {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        .btn-filled {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        .btn-filled:hover {
+            background: var(--red-dark);
+            border-color: var(--red-dark);
+        }
+
+        .btn-outline {
+            border-color: var(--gray);
+            color: var(--gray-light);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+        }
 
         .btn-group {
             display: flex;
@@ -177,8 +215,14 @@
             align-items: center;
         }
 
-        .about-img { position: relative; }
-        .about-img img { width: 100%; border-radius: 2px; display: block; }
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 2px;
+        }
 
         .about-img .line-top {
             position: absolute;
@@ -190,7 +234,11 @@
             border-right: 2px solid var(--red);
         }
 
-        .about-text h2 { font-size: 3rem; margin-bottom: 20px; }
+        .about-text h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
         .about-text h2 .red { color: var(--red); }
 
         .about-text p {
@@ -216,12 +264,9 @@
             color: var(--cream);
         }
 
-        .feature .icon-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--red);
-            transform: rotate(45deg);
-            flex-shrink: 0;
+        .feature .icon {
+            color: var(--red);
+            font-size: 1.1rem;
         }
 
         /* SERVICES */
@@ -235,7 +280,10 @@
             margin-bottom: 60px;
         }
 
-        .section-header h2 { font-size: 3rem; margin-bottom: 10px; }
+        .section-header h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
 
         .section-header p {
             color: var(--gray);
@@ -246,7 +294,7 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             max-width: 1200px;
             margin: 0 auto;
@@ -255,45 +303,46 @@
         .service-card {
             background: var(--darker);
             border: 1px solid rgba(255,255,255,0.05);
+            padding: 40px 30px;
+            text-align: center;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .service-card:hover { transform: translateY(-5px); border-color: rgba(192,57,43,0.4); }
-
-        .service-card .card-img {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--red);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
 
-        .service-card .card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-            display: block;
-            filter: brightness(0.7);
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
-        .service-card:hover .card-img img {
-            transform: scale(1.08);
-            filter: brightness(0.9);
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(192,57,43,0.3);
         }
 
-        .service-card .card-body {
-            padding: 30px 25px;
-            text-align: center;
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
-        .service-card .card-body h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
             letter-spacing: 3px;
         }
 
-        .service-card .card-body p {
+        .service-card p {
             color: var(--gray);
             font-size: 0.9rem;
             font-weight: 300;
@@ -301,7 +350,9 @@
         }
 
         /* GALLERY */
-        .gallery { padding: 100px 0; }
+        .gallery {
+            padding: 100px 0;
+        }
 
         .gallery-grid {
             display: grid;
@@ -315,12 +366,20 @@
             overflow: hidden;
             cursor: pointer;
             position: relative;
-            background: var(--darker);
         }
 
-        .gallery-grid .item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
-        .gallery-grid .item:nth-child(5) { grid-column: span 2; }
-        .gallery-grid .item:nth-child(8) { grid-column: span 2; }
+        .gallery-grid .item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-grid .item:nth-child(5) {
+            grid-column: span 2;
+        }
+
+        .gallery-grid .item:nth-child(8) {
+            grid-column: span 2;
+        }
 
         .gallery-grid .item img {
             width: 100%;
@@ -328,7 +387,6 @@
             object-fit: cover;
             transition: transform 0.6s ease, filter 0.3s;
             filter: grayscale(20%);
-            display: block;
         }
 
         .gallery-grid .item:hover img {
@@ -351,7 +409,9 @@
             margin-top: 60px;
         }
 
-        .artist-card { text-align: center; }
+        .artist-card {
+            text-align: center;
+        }
 
         .artist-card .photo {
             width: 200px;
@@ -366,10 +426,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
         }
 
-        .artist-card h3 { font-size: 1.5rem; letter-spacing: 3px; margin-bottom: 5px; }
+        .artist-card h3 {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
 
         .artist-card .specialty {
             color: var(--red);
@@ -396,7 +459,11 @@
             border-top: 1px solid rgba(192,57,43,0.2);
         }
 
-        .booking h2 { font-size: 3.5rem; margin-bottom: 15px; }
+        .booking h2 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+        }
+
         .booking h2 .red { color: var(--red); }
 
         .booking p {
@@ -424,7 +491,9 @@
             border-right: 1px solid rgba(255,255,255,0.05);
         }
 
-        .info-item:last-child { border-right: none; }
+        .info-item:last-child {
+            border-right: none;
+        }
 
         .info-item h3 {
             font-size: 1.3rem;
@@ -433,7 +502,11 @@
             color: var(--red);
         }
 
-        .info-item p { color: var(--gray); font-size: 0.85rem; font-weight: 300; }
+        .info-item p {
+            color: var(--gray);
+            font-size: 0.85rem;
+            font-weight: 300;
+        }
 
         /* FOOTER */
         footer {
@@ -450,8 +523,16 @@
             margin-bottom: 15px;
         }
 
-        footer p { color: var(--gray); font-size: 0.8rem; margin-bottom: 8px; }
-        footer a { color: var(--red); text-decoration: none; }
+        footer p {
+            color: var(--gray);
+            font-size: 0.8rem;
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: var(--red);
+            text-decoration: none;
+        }
 
         /* ANIMATIONS */
         .fade-up {
@@ -460,7 +541,10 @@
             transition: all 0.8s ease;
         }
 
-        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
         /* MOBILE */
         @media (max-width: 768px) {
@@ -535,7 +619,7 @@
     <section class="about" id="about">
         <div class="about-img fade-up">
             <div class="line-top"></div>
-            <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Tattoo studio interior">
+            <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=600" alt="Tattoo Studio">
         </div>
         <div class="about-text fade-up">
             <h2>WHERE <span class="red">ART</span> MEETS SKIN</h2>
@@ -543,12 +627,24 @@
             <p>Our artists specialize in a wide range of styles, from color realism to black and gray, neo-traditional to Japanese, and everything in between. Walk-ins are always welcome.</p>
             <p>We also offer professional piercings with the highest quality jewelry and sterile techniques.</p>
             <div class="about-features">
-                <div class="feature"><span class="icon-dot"></span> Custom Designs Only</div>
-                <div class="feature"><span class="icon-dot"></span> Sterile Environment</div>
-                <div class="feature"><span class="icon-dot"></span> Walk-Ins Welcome</div>
-                <div class="feature"><span class="icon-dot"></span> Cover-Up Specialists</div>
-                <div class="feature"><span class="icon-dot"></span> Professional Piercings</div>
-                <div class="feature"><span class="icon-dot"></span> Free Consultations</div>
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Custom Designs Only
+                </div>
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Sterile Environment
+                </div>
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Walk-Ins Welcome
+                </div>
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Cover-Up Specialists
+                </div>
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Professional Piercings
+                </div>
+                <div class="feature">
+                    <span class="icon">&#9670;</span> Free Consultations
+                </div>
             </div>
         </div>
     </section>
@@ -560,67 +656,36 @@
             <p>Custom tattoo artistry and professional piercings</p>
         </div>
         <div class="services-grid">
-
             <div class="service-card fade-up">
-                <div class="card-img">
-                    <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Custom tattoo design">
-                </div>
-                <div class="card-body">
-                    <h3>CUSTOM TATTOOS</h3>
-                    <p>Every design is created specifically for you. We work with your ideas and transform them into wearable art that's uniquely yours.</p>
-                </div>
+                <div class="service-icon">&#127912;</div>
+                <h3>CUSTOM TATTOOS</h3>
+                <p>Every design is created specifically for you. We work with your ideas and transform them into wearable art that's uniquely yours.</p>
             </div>
-
             <div class="service-card fade-up">
-                <div class="card-img">
-                    <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Color realism tattoo">
-                </div>
-                <div class="card-body">
-                    <h3>COLOR REALISM</h3>
-                    <p>Photorealistic tattoos in vivid color. Portraits, animals, nature — brought to life on your skin with stunning detail.</p>
-                </div>
+                <div class="service-icon">&#127752;</div>
+                <h3>COLOR REALISM</h3>
+                <p>Photorealistic tattoos in vivid color. Portraits, animals, nature — brought to life on your skin with stunning detail.</p>
             </div>
-
             <div class="service-card fade-up">
-                <div class="card-img">
-                    <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Black and gray tattoo">
-                </div>
-                <div class="card-body">
-                    <h3>BLACK & GRAY</h3>
-                    <p>Classic black and gray work with incredible depth and shading. From portraits to geometric designs, executed with precision.</p>
-                </div>
+                <div class="service-icon">&#9824;</div>
+                <h3>BLACK & GRAY</h3>
+                <p>Classic black and gray work with incredible depth and shading. From portraits to geometric designs, executed with precision.</p>
             </div>
-
             <div class="service-card fade-up">
-                <div class="card-img">
-                    <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Cover up tattoo">
-                </div>
-                <div class="card-body">
-                    <h3>COVER UPS</h3>
-                    <p>Old tattoo you regret? We specialize in creative cover-ups that transform unwanted ink into something you'll love showing off.</p>
-                </div>
+                <div class="service-icon">&#10006;</div>
+                <h3>COVER UPS</h3>
+                <p>Old tattoo you regret? We specialize in creative cover-ups that transform unwanted ink into something you'll love showing off.</p>
             </div>
-
             <div class="service-card fade-up">
-                <div class="card-img">
-                    <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Neo traditional tattoo">
-                </div>
-                <div class="card-body">
-                    <h3>NEO TRADITIONAL</h3>
-                    <p>Bold lines, vibrant colors, and modern takes on classic tattoo styles. A perfect blend of old school and contemporary art.</p>
-                </div>
+                <div class="service-icon">&#10024;</div>
+                <h3>NEO TRADITIONAL</h3>
+                <p>Bold lines, vibrant colors, and modern takes on classic tattoo styles. A perfect blend of old school and contemporary art.</p>
             </div>
-
             <div class="service-card fade-up">
-                <div class="card-img">
-                    <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Piercing service">
-                </div>
-                <div class="card-body">
-                    <h3>PIERCINGS</h3>
-                    <p>Professional body piercings with high-quality jewelry. Safe, sterile, and done by experienced piercers in a clean environment.</p>
-                </div>
+                <div class="service-icon">&#128167;</div>
+                <h3>PIERCINGS</h3>
+                <p>Professional body piercings with high-quality jewelry. Safe, sterile, and done by experienced piercers in a clean environment.</p>
             </div>
-
         </div>
     </section>
 
@@ -632,28 +697,28 @@
         </div>
         <div class="gallery-grid">
             <div class="item fade-up">
-                <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=800" alt="Tattoo work 1">
+                <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=800" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Tattoo work 2">
+                <img src="https://images.unsplash.com/photo-1590246814883-57c511e76bfe?w=600" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Tattoo work 3">
+                <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?w=600" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Tattoo work 4">
+                <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?w=600" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=800" alt="Tattoo work 5">
+                <img src="https://images.unsplash.com/photo-1475090169767-40ed8d18f67d?w=800" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Tattoo work 6">
+                <img src="https://images.unsplash.com/photo-1542359186734-72a36fce9f80?w=600" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=600" alt="Tattoo work 7">
+                <img src="https://images.unsplash.com/photo-1565058379802-bbe93b2f703a?w=600" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=800" alt="Tattoo work 8">
+                <img src="https://images.unsplash.com/photo-1612459284270-27b3a394b432?w=800" alt="Tattoo work">
             </div>
         </div>
     </section>
@@ -667,7 +732,7 @@
         <div class="artists-grid">
             <div class="artist-card fade-up">
                 <div class="photo">
-                    <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=400" alt="Artist 1">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Artist">
                 </div>
                 <h3>ARTIST NAME</h3>
                 <div class="specialty">Color Realism / Portraits</div>
@@ -675,7 +740,7 @@
             </div>
             <div class="artist-card fade-up">
                 <div class="photo">
-                    <img src="https://images.pexels.com/photos/2183131/pexels-photo-2183131.jpeg?w=400" alt="Artist 2">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400" alt="Artist">
                 </div>
                 <h3>ARTIST NAME</h3>
                 <div class="specialty">Black & Gray / Neo Traditional</div>
