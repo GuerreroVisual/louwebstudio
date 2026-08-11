@@ -75,11 +75,6 @@
             color: var(--red);
         }
 
-        .nav-phone {
-            color: var(--red) !important;
-            font-weight: 700 !important;
-        }
-
         /* HERO */
         .hero {
             height: 100vh;
@@ -88,7 +83,7 @@
             justify-content: center;
             text-align: center;
             background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.85) 100%),
-                        url('https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1920') center/cover;
+                        url('https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?w=1920&q=80') center/cover;
             position: relative;
         }
 
@@ -259,14 +254,18 @@
         .feature {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-size: 0.85rem;
             color: var(--cream);
         }
 
-        .feature .icon {
-            color: var(--red);
-            font-size: 1.1rem;
+        .feature::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--red);
+            flex-shrink: 0;
         }
 
         /* SERVICES */
@@ -331,11 +330,6 @@
             border-color: rgba(192,57,43,0.3);
         }
 
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 12px;
@@ -357,7 +351,7 @@
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 280px);
+            grid-auto-rows: 280px;
             gap: 5px;
             padding: 0 5px;
         }
@@ -370,14 +364,13 @@
 
         .gallery-grid .item:nth-child(1) {
             grid-column: span 2;
-            grid-row: span 2;
         }
 
-        .gallery-grid .item:nth-child(5) {
+        .gallery-grid .item:nth-child(4) {
             grid-column: span 2;
         }
 
-        .gallery-grid .item:nth-child(8) {
+        .gallery-grid .item:nth-child(7) {
             grid-column: span 2;
         }
 
@@ -552,10 +545,10 @@
             .nav-links { display: none; }
             .about { grid-template-columns: 1fr; gap: 40px; padding: 60px 20px; }
             .about-features { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 220px; }
             .gallery-grid .item:nth-child(1) { grid-column: span 2; }
-            .gallery-grid .item:nth-child(5) { grid-column: span 1; }
-            .gallery-grid .item:nth-child(8) { grid-column: span 1; }
+            .gallery-grid .item:nth-child(4) { grid-column: span 1; }
+            .gallery-grid .item:nth-child(7) { grid-column: span 1; }
             .artists-grid { grid-template-columns: 1fr; }
             .info-bar { grid-template-columns: 1fr; }
             .info-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -596,7 +589,7 @@
         <div class="marquee-inner">
             <span>CUSTOM TATTOOS</span>
             <span>COLOR REALISM</span>
-            <span>BLACK & GRAY</span>
+            <span>BLACK &amp; GRAY</span>
             <span>COVER UPS</span>
             <span>PORTRAITS</span>
             <span>NEO TRADITIONAL</span>
@@ -605,7 +598,7 @@
             <span>PIERCINGS</span>
             <span>CUSTOM TATTOOS</span>
             <span>COLOR REALISM</span>
-            <span>BLACK & GRAY</span>
+            <span>BLACK &amp; GRAY</span>
             <span>COVER UPS</span>
             <span>PORTRAITS</span>
             <span>NEO TRADITIONAL</span>
@@ -619,7 +612,7 @@
     <section class="about" id="about">
         <div class="about-img fade-up">
             <div class="line-top"></div>
-            <img src="https://images.unsplash.com/photo-1759247943101-f1b32bcc6a8b?q=80&w=694&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tattoo Studio">
+            <img src="https://images.unsplash.com/photo-1759247943101-f1b32bcc6a8b?w=800&q=80" alt="Tattoo Studio">
         </div>
         <div class="about-text fade-up">
             <h2>WHERE <span class="red">ART</span> MEETS SKIN</h2>
@@ -627,24 +620,12 @@
             <p>Our artists specialize in a wide range of styles, from color realism to black and gray, neo-traditional to Japanese, and everything in between. Walk-ins are always welcome.</p>
             <p>We also offer professional piercings with the highest quality jewelry and sterile techniques.</p>
             <div class="about-features">
-                <div class="feature">
-                    <span class="icon">&#9670;</span> Custom Designs Only
-                </div>
-                <div class="feature">
-                    <span class="icon">&#9670;</span> Sterile Environment
-                </div>
-                <div class="feature">
-                    <span class="icon">&#9670;</span> Walk-Ins Welcome
-                </div>
-                <div class="feature">
-                    <span class="icon">&#9670;</span> Cover-Up Specialists
-                </div>
-                <div class="feature">
-                    <span class="icon">&#9670;</span> Professional Piercings
-                </div>
-                <div class="feature">
-                    <span class="icon">&#9670;</span> Free Consultations
-                </div>
+                <div class="feature">Custom Designs Only</div>
+                <div class="feature">Sterile Environment</div>
+                <div class="feature">Walk-Ins Welcome</div>
+                <div class="feature">Cover-Up Specialists</div>
+                <div class="feature">Professional Piercings</div>
+                <div class="feature">Free Consultations</div>
             </div>
         </div>
     </section>
@@ -657,32 +638,26 @@
         </div>
         <div class="services-grid">
             <div class="service-card fade-up">
-                <div class="service-icon">&#127912;</div>
                 <h3>CUSTOM TATTOOS</h3>
                 <p>Every design is created specifically for you. We work with your ideas and transform them into wearable art that's uniquely yours.</p>
             </div>
             <div class="service-card fade-up">
-                <div class="service-icon">&#127752;</div>
                 <h3>COLOR REALISM</h3>
                 <p>Photorealistic tattoos in vivid color. Portraits, animals, nature — brought to life on your skin with stunning detail.</p>
             </div>
             <div class="service-card fade-up">
-                <div class="service-icon">&#9824;</div>
-                <h3>BLACK & GRAY</h3>
+                <h3>BLACK &amp; GRAY</h3>
                 <p>Classic black and gray work with incredible depth and shading. From portraits to geometric designs, executed with precision.</p>
             </div>
             <div class="service-card fade-up">
-                <div class="service-icon">&#10006;</div>
                 <h3>COVER UPS</h3>
                 <p>Old tattoo you regret? We specialize in creative cover-ups that transform unwanted ink into something you'll love showing off.</p>
             </div>
             <div class="service-card fade-up">
-                <div class="service-icon">&#10024;</div>
                 <h3>NEO TRADITIONAL</h3>
                 <p>Bold lines, vibrant colors, and modern takes on classic tattoo styles. A perfect blend of old school and contemporary art.</p>
             </div>
             <div class="service-card fade-up">
-                <div class="service-icon">&#128167;</div>
                 <h3>PIERCINGS</h3>
                 <p>Professional body piercings with high-quality jewelry. Safe, sterile, and done by experienced piercers in a clean environment.</p>
             </div>
@@ -697,28 +672,28 @@
         </div>
         <div class="gallery-grid">
             <div class="item fade-up">
-                <img src="https://images.unsplash.com/photo-1753260283382-a7b5d362af85?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tattoo work">
+                <img src="https://images.unsplash.com/photo-1753260283382-a7b5d362af85?w=1200&q=80" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.unsplash.com/photo-1665612077564-486eb0a43431?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tattoo work">
+                <img src="https://images.unsplash.com/photo-1665612077564-486eb0a43431?w=800&q=80" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.unsplash.com/photo-1651021467247-65b7d05163b2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tattoo work">
+                <img src="https://images.unsplash.com/photo-1651021467247-65b7d05163b2?w=800&q=80" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.unsplash.com/photo-1766766457082-85a1c878a456?q=80&w=626&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tattoo work">
+                <img src="https://images.unsplash.com/photo-1766766457082-85a1c878a456?w=1200&q=80" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.unsplash.com/photo-1594091011122-3ae14fdbe243?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                <img src="https://images.unsplash.com/photo-1594091011122-3ae14fdbe243?w=800&q=80" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.unsplash.com/photo-1608666599953-b951163495f4?q=80&w=1166&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tattoo work">
+                <img src="https://images.unsplash.com/photo-1608666599953-b951163495f4?w=800&q=80" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.unsplash.com/photo-1783973190247-3f47753ad259?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tattoo work">
+                <img src="https://images.unsplash.com/photo-1783973190247-3f47753ad259?w=1200&q=80" alt="Tattoo work">
             </div>
             <div class="item fade-up">
-                <img src="https://images.unsplash.com/photo-1594070182331-51452dcd61c3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tattoo work">
+                <img src="https://images.unsplash.com/photo-1594070182331-51452dcd61c3?w=800&q=80" alt="Tattoo work">
             </div>
         </div>
     </section>
@@ -732,7 +707,7 @@
         <div class="artists-grid">
             <div class="artist-card fade-up">
                 <div class="photo">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Artist">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Artist">
                 </div>
                 <h3>ARTIST NAME</h3>
                 <div class="specialty">Color Realism / Portraits</div>
@@ -740,10 +715,10 @@
             </div>
             <div class="artist-card fade-up">
                 <div class="photo">
-                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400" alt="Artist">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80" alt="Artist">
                 </div>
                 <h3>ARTIST NAME</h3>
-                <div class="specialty">Black & Gray / Neo Traditional</div>
+                <div class="specialty">Black &amp; Gray / Neo Traditional</div>
                 <p>Master of black and gray work with incredible depth. Also creates bold neo-traditional pieces with vivid colors.</p>
             </div>
         </div>
